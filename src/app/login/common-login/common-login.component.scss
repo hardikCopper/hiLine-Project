@@ -1,0 +1,23 @@
+@use 'src/assets/scss/variables' as Var;
+
+.common-login-section {
+    height: 100%;
+    background-size: 100% 100%;
+    background-image: url("/assets/Backgrounds/Home-page-background1.png");
+    background-color: Var.$Primary-Color
+}
+
+.common-login-div {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.common-login-div>div {
+    display: flex;
+    align-items: center;
+}
+
+.form-container {
+    width: 32.7%;
+}

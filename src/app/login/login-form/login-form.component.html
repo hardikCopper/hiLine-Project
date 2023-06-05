@@ -1,0 +1,26 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+    <h2>Login</h2>
+    <div class="inputBox">
+        <label>Comapny Code*</label>
+        <input type="text" formControlName="companyCode" placeholder="Enter Company Code">
+        <p class="error">Invalid Company Code</p>
+    </div>
+    <div class="inputBox">
+        <label>Email/Employee Id*</label>
+        <input type="email" formControlName="email" placeholder="Enter Email/Employee ID">
+        <p class="error">Invalid Email Address</p>
+    </div>
+    <div class="inputBox">
+        <label>Password*</label>
+        <input type="password" formControlName="password" placeholder="Enter Password">
+        <p class="error">Invalid Password</p>
+    </div>
+    <div class="extra-options">
+        <label>
+            <input type="checkbox" formControlName="rememberMe" class="check"><span>Remember Me</span>
+        </label>
+        <a routerLink="/forgot-password" class="forget">Forgot Password</a>
+    </div>
+
+    <button type="submit" [disabled]="!loginForm.valid" class="submit">Login</button>
+</form>

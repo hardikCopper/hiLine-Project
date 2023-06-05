@@ -1,0 +1,27 @@
+@use 'src/assets/scss/mixinsTypo' as Mix;
+
+html,
+body,
+app-root,
+app-common-login {
+    height: 100%;
+    margin: 0;
+    display: block;
+}
+
+p {
+    margin: 0;
+}
+
+app-login-form {
+    width: 100%;
+}
+
+button:hover,
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+button:hover:disabled {
+    cursor: not-allowed;
+}

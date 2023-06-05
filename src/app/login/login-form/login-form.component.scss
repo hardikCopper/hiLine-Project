@@ -1,0 +1,37 @@
+@use 'src/assets/scss/mixinsTypo' as Mix;
+@use 'src/assets/scss/variables' as Var;
+@use 'src/assets/scss/Components/loginForm' as LF;
+
+.loginForm {
+    @include LF.form;
+}
+
+.extra-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+
+    label {
+        display: flex;
+        align-items: center;
+
+        .check {
+            margin: 0;
+            margin-right: 0.8rem;
+            height: 18px;
+            width: 18px;
+            border: 2px solid Var.$Secondary-Color;
+            border-radius: 4px;
+        }
+
+        span {
+            @include Mix.Description;
+        }
+    }
+}
+
+.forget {
+    @include Mix.Description;
+    color: Var.$Secondary-Color;
+    text-decoration: none;
+}

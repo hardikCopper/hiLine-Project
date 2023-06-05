@@ -1,0 +1,58 @@
+@use 'src/assets/scss/mixinsTypo' as Mix;
+@use 'src/assets/scss/variables' as Var;
+@mixin form {
+    padding: 3rem 3.2rem;
+    background-color: Var.$Tertiary-Color-Lighter;
+    box-shadow: 0px 0px 16px rgba(0, 83, 159, 0.2);
+    border-radius: 12px;
+
+    h2 {
+        @include Mix.H2;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .ng-touched.ng-invalid {
+        border-color: Var.$Warning-Color !important;
+    }
+
+    .ng-touched.ng-invalid+.error {
+        visibility: visible;
+    }
+
+    .submit {
+        @include Mix.BTN-Bold;
+        border: 2px solid Var.$Secondary-Color;
+        border-radius: 24px;
+        width: 100%;
+        padding: 0.8rem 0;
+    }
+
+    .error {
+        @include Mix.Description;
+        visibility: hidden;
+        color: Var.$Warning-Color;
+        margin-top: 0.25rem;
+    }
+
+    .inputBox {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        label {
+            @include Mix.Label;
+            margin-bottom: 0.25rem;
+        }
+
+        input {
+            border-radius: 2px;
+            padding: 0.75rem 0.5rem;
+            border: 1px solid Var.$Neutral-Color-Dark;
+        }
+
+        input::Placeholder {
+            @include Mix.Placeholder;
+        }
+    }
+}
