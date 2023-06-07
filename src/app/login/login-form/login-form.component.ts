@@ -10,9 +10,9 @@ export class LoginFormComponent implements OnInit {
   loginForm: FormGroup
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      companyCode: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
+      companyCode: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')]],
+      password: ['', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$')]],
       rememberMe: [false]
     });
   }

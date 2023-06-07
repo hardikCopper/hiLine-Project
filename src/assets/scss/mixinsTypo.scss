@@ -4,7 +4,7 @@
     font-family: Var.$Font-Family;
     font-weight: $fontWeight;
     font-size: $fontSize;
-    line-height: none;
+    line-height: $lineHeight;
     color: $color;
 }
 
@@ -33,7 +33,7 @@
 }
 
 @mixin H6 {
-    @include common(normal, 18px, 16px, Var.$Neutral-Color-Dark);
+    @include common(normal, 18px, 20px, Var.$Neutral-Color-Dark);
 }
 
 @mixin BTN {

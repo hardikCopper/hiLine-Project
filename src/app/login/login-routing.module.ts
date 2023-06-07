@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonLoginComponent } from './common-login/common-login.component';
 import { LoginFormComponent} from './login-form/login-form.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 const routes: Routes = [{
   path: '', component: CommonLoginComponent,
   children: [
-    { path: '', component: LoginFormComponent }
+    { path: '', component: LoginFormComponent },
+    { path: 'forget-password', component: ForgetPasswordComponent }
   ]
 }];
 

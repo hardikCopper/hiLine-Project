@@ -19,5 +19,34 @@
 }
 
 .form-container {
-    width: 32.7%;
+    width: 32.5%;
+}
+
+.logo-container {
+    width: 35.4%;
+}
+
+@media screen and (max-width: 992px) {
+    .form-container {
+        width: 56%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .common-login-div {
+        justify-content: center;
+    }
+
+    .common-login-div>div {
+        align-items: flex-start;
+    }
+
+    .logo-container {
+        width: 100%;
+    }
+
+    .form-container {
+        position: absolute;
+        top: 10rem;
+    }
 }

@@ -13,7 +13,9 @@ p {
     margin: 0;
 }
 
-app-login-form {
+app-login-form,
+app-forget-password,
+app-logo {
     width: 100%;
 }
 
@@ -24,4 +26,12 @@ input[type="checkbox"]:hover {
 
 button:hover:disabled {
     cursor: not-allowed;
+}
+
+@media screen and (max-width: 576px) {
+    app-logo {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -1,7 +1,16 @@
 @use 'src/assets/scss/mixinsTypo' as Mix;
 @use 'src/assets/scss/variables' as Var;
+
+@mixin submitBtn {
+    @include Mix.BTN-Bold;
+    border: 2px solid Var.$Secondary-Color;
+    border-radius: 24px;
+    width: 100%;
+    padding: 0.8rem 0;
+}
+
 @mixin form {
-    padding: 3rem 3.2rem;
+    padding: 10.3% 12%;
     background-color: Var.$Tertiary-Color-Lighter;
     box-shadow: 0px 0px 16px rgba(0, 83, 159, 0.2);
     border-radius: 12px;
@@ -10,6 +19,7 @@
         @include Mix.H2;
         margin-top: 0;
         margin-bottom: 2rem;
+        text-align: center;
     }
 
     .ng-touched.ng-invalid {
@@ -20,12 +30,15 @@
         visibility: visible;
     }
 
-    .submit {
-        @include Mix.BTN-Bold;
-        border: 2px solid Var.$Secondary-Color;
-        border-radius: 24px;
-        width: 100%;
-        padding: 0.8rem 0;
+    .submit-disabled {
+        @include submitBtn;
+        background-color: Var.$Tertiary-Color-Lighter;
+    }
+
+    .submit-active {
+        @include submitBtn;
+        background-color: Var.$Secondary-Color;
+        color: Var.$Tertiary-Color-Lighter;
     }
 
     .error {
@@ -53,6 +66,18 @@
 
         input::Placeholder {
             @include Mix.Placeholder;
+        }
+    }
+
+    .goBack {
+        @include Mix.H6;
+        margin-bottom: 0;
+        margin-top: 3.75rem;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: Var.$Secondary-Color;
         }
     }
 }
