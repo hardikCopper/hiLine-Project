@@ -28,10 +28,17 @@ button:hover:disabled {
     cursor: not-allowed;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
     app-logo {
         height: 100%;
         display: flex;
         justify-content: center;
+    }
+
+    html,
+    body,
+    app-root,
+    app-common-login {
+        height: auto;
     }
 }

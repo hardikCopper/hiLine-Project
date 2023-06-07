@@ -7,13 +7,17 @@
     background-color: Var.$Primary-Color
 }
 
-.common-login-div {
+.common-login-div-desktop {
     display: flex;
     height: 100%;
     justify-content: space-around;
 }
 
-.common-login-div>div {
+.common-login-div-mobile {
+    display: none;
+}
+
+.common-login-div-desktop>div {
     display: flex;
     align-items: center;
 }
@@ -26,28 +30,30 @@
     width: 35.4%;
 }
 
+.logo-container-child {
+    display: flex;
+    flex-direction: column;
+}
+
 @media screen and (max-width: 992px) {
     .form-container {
         width: 56%;
     }
 }
 
-@media screen and (max-width: 576px) {
-    .common-login-div {
-        justify-content: center;
+@media screen and (max-width: 768px) {
+
+    .common-login-section,
+    .common-login-div-desktop {
+        height: auto;
     }
 
-    .common-login-div>div {
-        align-items: flex-start;
+    .common-login-div-desktop {
+        display: none;
     }
 
-    .logo-container {
-        width: 100%;
-    }
-
-    .form-container {
-        position: absolute;
-        top: 13.5rem;
-        width: 100%;
+    .common-login-div-mobile {
+        display: flex;
+        flex-direction: column;
     }
 }

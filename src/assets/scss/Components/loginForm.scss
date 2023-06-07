@@ -10,13 +10,14 @@
 }
 
 @mixin form {
-    padding: 3rem 3.875rem;
+    padding: 3rem 3.5rem;
     background-color: Var.$Tertiary-Color-Lighter;
     box-shadow: 0px 0px 16px rgba(0, 83, 159, 0.2);
     border-radius: 12px;
 
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 768px) {
         border-radius: 0;
+        padding: 3rem 3.875rem;
     }
 
     h2 {

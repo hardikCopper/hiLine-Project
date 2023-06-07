@@ -7,12 +7,14 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { LogoComponent } from './logo/logo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { CopyrightComponent } from './copyright/copyright.component';
 @NgModule({
   declarations: [
     CommonLoginComponent,
     LoginFormComponent,
     LogoComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    CopyrightComponent
   ],
   imports: [
     CommonModule,

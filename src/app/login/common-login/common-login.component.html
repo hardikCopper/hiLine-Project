@@ -1,10 +1,18 @@
 <section class="common-login-section">
-    <div class="common-login-div">
+    <div class="common-login-div-desktop">
         <div class="logo-container">
-            <app-logo></app-logo>
+            <div class="logo-container-child">
+                <app-logo></app-logo>
+                <app-copyright></app-copyright>
+            </div>
         </div>
         <div class="form-container">
             <router-outlet></router-outlet>
         </div>
+    </div>
+    <div class="common-login-div-mobile">
+        <app-logo></app-logo>
+        <router-outlet></router-outlet>
+        <app-copyright></app-copyright>
     </div>
 </section>
