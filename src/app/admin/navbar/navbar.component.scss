@@ -1,0 +1,50 @@
+@use 'src/assets/scss/variables' as Var;
+@use 'src/assets/scss/mixinsTypo' as Mix;
+
+.navBar-Section {
+    background-color: Var.$Primary-Color;
+    height: 6.25rem;
+    display: flex;
+    justify-content: space-between;
+
+    .leftSection {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .menuHandler {
+            padding-left: 1rem;
+        }
+
+        .logo-Block {
+            height: 4.5rem;
+            padding-left: 1.75rem;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+
+    .rightSection {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        .profile-block{
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            background-color: Var.$Tertiary-Color-Lighter;
+            margin-right: 0.8rem;
+        }
+        .name{
+            @include Mix.H6;
+            margin: 0;
+            margin-right: 1.4375rem;
+            color: Var.$Tertiary-Color-Lighter;
+        }
+        .dropdown-block{
+            margin-right: 3rem;
+        }
+    }
+}

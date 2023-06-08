@@ -1,0 +1,28 @@
+@use 'src/assets/scss/variables' as Var;
+
+.sidebar-section {
+    background-color: Var.$Hiline-Color-Light;
+    position: fixed;
+    height: 100%;
+
+    .iconBlock-parent {
+        padding-top: 1rem;
+
+        .iconBlock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 4.0625rem;
+            height: 4rem;
+
+            svg {
+                opacity: 0.5;
+
+                path,
+                rect {
+                    fill: Var.$Neutral-Color-Dark;
+                }
+            }
+        }
+    }
+}
