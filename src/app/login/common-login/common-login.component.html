@@ -1,5 +1,5 @@
 <section class="common-login-section">
-    <div class="common-login-div-desktop">
+    <div class="common-login-div-desktop" *ngIf="screenWidth > 576 ; else mobileView">
         <div class="logo-container">
             <div class="logo-container-child">
                 <app-logo></app-logo>
@@ -10,9 +10,11 @@
             <router-outlet></router-outlet>
         </div>
     </div>
-    <div class="common-login-div-mobile">
-        <app-logo></app-logo>
-        <router-outlet></router-outlet>
-        <app-copyright></app-copyright>
-    </div>
+    <ng-template #mobileView>
+        <div class="common-login-div-mobile">
+            <app-logo></app-logo>
+            <router-outlet></router-outlet>
+            <app-copyright></app-copyright>
+        </div>
+    </ng-template>
 </section>

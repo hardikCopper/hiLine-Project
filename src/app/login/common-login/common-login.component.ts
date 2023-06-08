@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-common-login',
@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./common-login.component.scss']
 })
 export class CommonLoginComponent {
+  screenWidth: number;
+  constructor() {
+    this.screenWidth = window.innerWidth;
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.screenWidth = window.innerWidth;
+  }
 
 }
