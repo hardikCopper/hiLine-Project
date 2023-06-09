@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { CopyrightComponent } from './copyright/copyright.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     LogoComponent,
     ForgetPasswordComponent,
     CopyrightComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,
