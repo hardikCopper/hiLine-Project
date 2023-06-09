@@ -25,7 +25,7 @@ export class ResetPasswordComponent {
     console.log(this.resetPass.value);
   }
 
-  @HostListener('mouseout') onMouseOut() {
+  @HostListener('blur') onOut() {
     if (this.resetPass.value.password === this.resetPass.value.confirmPassword) {
       this.passwordsSame = true;
     }
