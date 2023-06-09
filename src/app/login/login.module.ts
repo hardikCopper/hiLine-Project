@@ -8,13 +8,16 @@ import { LogoComponent } from './logo/logo.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { CopyrightComponent } from './copyright/copyright.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+
 @NgModule({
   declarations: [
     CommonLoginComponent,
     LoginFormComponent,
     LogoComponent,
     ForgetPasswordComponent,
-    CopyrightComponent
+    CopyrightComponent,
+    VerifyEmailComponent
   ],
   imports: [
     CommonModule,

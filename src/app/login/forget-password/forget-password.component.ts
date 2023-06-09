@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ValidationService } from '../../Services/validation.service';
 
 @Component({
   selector: 'app-forget-password',
@@ -8,10 +9,10 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class ForgetPasswordComponent {
   forgetPass: FormGroup
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private vs: ValidationService) {
     this.forgetPass = this.fb.group({
-      companyCode: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
-      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')]]
+      companyCode: vs.validators.companyCode,
+      email: vs.validators.email
     });
   }
   onSubmit() {

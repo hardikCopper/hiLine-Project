@@ -1,0 +1,20 @@
+<form [formGroup]="verifyEmail" (ngSubmit)="onSubmit()" class="loginForm">
+    <h2>Verify Email</h2>
+
+    <div class="inputBox">
+        <label>Verification Code*</label>
+        <input type="email" formControlName="verifyCode" placeholder="Enter Verification Code">
+        <p class="error">Invalid Validation Code</p>
+    </div>
+
+    <button type="submit" [disabled]="!verifyEmail.valid"
+        [ngClass]="[verifyEmail.valid ? 'submit-active' : 'submit-disabled']">Continue</button>
+    <div class="timerBlock" *ngIf="!timerEnd;else sendCodeAgain">
+        <p class="timer">Resend Code: {{time}}</p>
+    </div>
+    <ng-template #sendCodeAgain>
+        <div class="timerBlock">
+            <button type="button" class="resendBtn">Resend Code</button>
+        </div>
+    </ng-template>
+</form>
