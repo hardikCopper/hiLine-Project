@@ -6,7 +6,7 @@ const routes: Routes = [{
   children: [
     {
       path: '',
-      loadChildren: () => import('./inventory/inventory.module').then(m => m.InventoryModule)
+      loadChildren: () => import('./inventory-module/inventory.module').then(m => m.InventoryModule)
     }
   ]
 }];
