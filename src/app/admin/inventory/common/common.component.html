@@ -1,0 +1,6 @@
+<section class="common-section">
+    <app-tabs [activeTabs]="activeTabs"></app-tabs>
+    <ng-container *ngIf="activeTabs.log">
+        <app-log></app-log>
+    </ng-container>
+</section>

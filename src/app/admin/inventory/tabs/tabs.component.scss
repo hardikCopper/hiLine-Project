@@ -1,0 +1,24 @@
+@use 'src/assets/scss/mixinsTypo' as Mix;
+@use 'src/assets/scss/variables' as Var;
+
+.tabs-section {
+    display: flex;
+
+    h5 {
+        @include Mix.H5;
+        padding-bottom: 0.5rem;
+        margin: 0;
+        margin-right: 4rem;
+        opacity: 0.4;
+        padding-right: 0.75rem;
+    }
+    h5:hover{
+        cursor: pointer;
+    }
+
+    .active-tab {
+        color: Var.$Secondary-Color;
+        opacity: 1;
+        border-bottom: 4px solid Var.$Secondary-Color;
+    }
+}

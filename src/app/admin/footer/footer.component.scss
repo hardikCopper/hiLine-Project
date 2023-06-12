@@ -9,12 +9,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .logoBlock{
+
+    .logoBlock {
         margin-right: 2.8rem;
     }
+
     .copyrightBlock h6 {
-            @include Mix.H6;
-            color: Var.$Tertiary-Color-Lighter;
-            margin: 0;
-        }
+        @include Mix.H6;
+        color: Var.$Tertiary-Color-Lighter;
+        margin: 0;
+    }
 }

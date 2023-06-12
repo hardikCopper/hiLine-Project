@@ -1,0 +1,5 @@
+<div class="tabs-section">
+    <h5 [ngClass]="[activeTabs.log ? 'active-tab' : '']" (click)="changeTab('log')">INVENTORY LOG</h5>
+    <h5 [ngClass]="[activeTabs.add ? 'active-tab' : '']" (click)="changeTab('add')">ADD INVENTORY</h5>
+    <h5 [ngClass]="[activeTabs.return ? 'active-tab' : '']" (click)="changeTab('return')">RETURN INVENTORY</h5>
+</div>
