@@ -1,0 +1,58 @@
+@use 'src/assets/scss/mixinsTypo' as Mix;
+@use 'src/assets/scss/variables' as Var;
+
+.log-section {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+
+    .jobNum {
+        @include Mix.H5;
+        opacity: 0.5;
+        margin: 0;
+    }
+
+    .search-input {
+        width: 18.75rem;
+        padding: 0.75rem 1rem;
+        padding-right: 1.9375rem;
+        border-radius: 18px;
+        border: 1px solid Var.$Neutral-Color-Dark;
+        box-sizing: border-box;
+        height: 2.5rem;
+        margin-right: 1.5625rem;
+    }
+
+    .search-input::placeholder {
+        @include Mix.Placeholder;
+        color: #D0C9D6;
+    }
+
+    .rightBlock {
+        display: flex;
+    }
+
+    .download-dataBlock {
+        button {
+            @include Mix.BTN-Bold;
+            background: Var.$Secondary-Color;
+            border-radius: 8px;
+            color: Var.$Tertiary-Color-Lighter;
+
+            padding-left: 2rem;
+            border: none;
+            height: 2.375rem;
+            display: flex;
+            align-items: center;
+        }
+
+        span {
+            margin-right: 1rem;
+        }
+
+        img {
+            width: 0.625rem;
+            margin-right: 2rem;
+        }
+    }
+}

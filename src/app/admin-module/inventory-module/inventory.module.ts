@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { InventoryRoutingModule } from './inventory-routing.module';
-import { LogComponent } from './log-module/log/log.component';
+import { LogComponent } from './log/log.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { InventoryComponent } from './inventory/inventory.component';
 
