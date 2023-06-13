@@ -10,22 +10,35 @@
 }
 
 @mixin form {
-    padding: 10.4% 12%;
     background-color: Var.$Tertiary-Color-Lighter;
     box-shadow: 0px 0px 16px rgba(0, 83, 159, 0.2);
     border-radius: 12px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media screen and (max-width: 576px) {
         border-radius: 0;
         padding: 10% 13%;
     }
 
-    h2 {
-        @include Mix.H2;
-        margin-top: 0;
-        margin-bottom: 2rem;
-        text-align: center;
+    .heading-block {
+        height: 7.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            @include Mix.H2;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            text-align: center;
+            margin: 0;
+        }
     }
+
+
 
     .ng-touched.ng-invalid {
         border-color: Var.$Warning-Color !important;
@@ -38,6 +51,7 @@
     .submit-disabled {
         @include submitBtn;
         background-color: Var.$Tertiary-Color-Lighter;
+        width: 76%;
     }
 
     .submit-active {
@@ -56,7 +70,8 @@
     .inputBox {
         display: flex;
         flex-direction: column;
-        margin-bottom: 1rem;
+        width: 76%;
+        height: 6rem;
 
         label {
             @include Mix.Label;

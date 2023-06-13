@@ -10,6 +10,7 @@
 .common-login-div-desktop {
     display: flex;
     height: 100%;
+    align-items: center;
     justify-content: space-around;
 }
 
@@ -19,7 +20,8 @@
 }
 
 .form-container {
-    width: 29.25rem;
+    width: 32.5%;
+    height: 35.3125rem;
 }
 
 .logo-container {

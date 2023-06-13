@@ -1,5 +1,7 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
-    <h2>Login</h2>
+    <div class="heading-block">
+        <h2>Login</h2>
+    </div>
     <div class="inputBox">
         <label>Comapny Code*</label>
         <input type="text" formControlName="companyCode" placeholder="Enter Company Code">
@@ -22,5 +24,6 @@
         <a routerLink="/forget-password" class="forget">Forgot Password</a>
     </div>
 
-    <button type="submit" [disabled]="!loginForm.valid" [ngClass]="[loginForm.valid ? 'submit-active' : 'submit-disabled']">Login</button>
+    <button type="submit" [disabled]="!loginForm.valid"
+        [ngClass]="[loginForm.valid ? 'submit-active' : 'submit-disabled']">Login</button>
 </form>
