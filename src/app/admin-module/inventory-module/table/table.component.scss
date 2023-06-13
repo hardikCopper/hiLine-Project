@@ -1,0 +1,41 @@
+@use 'src/assets/scss/mixinsTypo' as Mix;
+@use 'src/assets/scss/variables' as Var;
+
+.data-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th {
+        border: 1px solid Var.$Gray-3;
+        @include Mix.Th;
+        height: 4rem;
+        padding-left: 1rem;
+
+        div {
+            display: flex;
+            align-items: center;
+
+            input[type="checkbox"] {
+                margin: 0;
+                border: 2px solid Var.$Secondary-Color;
+                border-radius: 4px;
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 1rem;
+            }
+
+            img {
+                margin-left: 0.5rem;
+                width: 7px;
+            }
+        }
+    }
+
+    .bl0 {
+        border-left: 0;
+    }
+
+    .br0 {
+        border-right: 0;
+    }
+}

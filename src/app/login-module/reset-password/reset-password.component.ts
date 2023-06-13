@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { ValidationService } from 'src/app/Services/validation.service';
-import { ValidatorFn, ValidationErrors } from '@angular/forms';
+import { confirmPasswordValidator } from 'src/Common/Functions';
 import { HostListener } from '@angular/core';
 
 @Component({
@@ -34,11 +34,4 @@ export class ResetPasswordComponent {
     }
   }
 }
-export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
-  const password = control.get('password');
-  const confirmPassword = control.get('confirmPassword');
 
-  return password && confirmPassword && password.value !== confirmPassword.value
-    ? { 'confirmPassword': true }
-    : null;
-};

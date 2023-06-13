@@ -52,7 +52,7 @@
 }
 
 @mixin Th {
-    @include common(normal, 14px, 12px, Var.$Neutral-Color-Dark);
+    @include common(normal, 14px, 12px, Var.$Neutral-Color-Med);
 }
 
 @mixin Tr {
