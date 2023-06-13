@@ -20,7 +20,7 @@
 
     @media screen and (max-width: 576px) {
         border-radius: 0;
-        padding: 10% 13%;
+        height: 35.3125rem;
     }
 
     .heading-block {
@@ -28,6 +28,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media screen and (min-height: 854px) and (max-width: 576px) {
+            height: 20%;
+        }
 
         h2 {
             @include Mix.H2;
@@ -72,6 +76,11 @@
         flex-direction: column;
         width: 76%;
         height: 6rem;
+
+        @media screen and (min-height: 854px) and (max-width: 576px) {
+            height: 16.5%;
+        }
+
 
         label {
             @include Mix.Label;

@@ -17,8 +17,12 @@
         display: flex;
         justify-content: center;
         box-sizing: border-box;
-        padding-top: 1.75rem;
-        padding-bottom: 2.6875rem;
+        display: flex;
+        align-items: center;
+
+        @media screen and (min-height: 854px) and (max-width: 576px) {
+            height: auto;
+        }
 
         img {
             width: 200px;

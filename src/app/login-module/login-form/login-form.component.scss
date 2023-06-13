@@ -4,14 +4,21 @@
 
 .loginForm {
     @include LF.form;
+
+    @media screen and (min-height: 854px) and (max-width: 576px) {
+        height: 100%;
+    }
 }
 
 .extra-options {
     display: flex;
     justify-content: space-between;
     height: 4rem;
-    align-items: start;
+    align-items: flex-start;
     width: 76%;
+    @media screen and (min-height: 854px) and (max-width: 576px) {
+            height: 13%;
+        }
 
     label {
         display: flex;

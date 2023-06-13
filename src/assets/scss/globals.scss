@@ -46,3 +46,17 @@ button:hover:disabled {
         height: auto;
     }
 }
+
+@media screen and (min-height: 854px) and (max-width: 576px) {
+
+    html,
+    body,
+    app-root,
+    app-common-login {
+        height: 100%;
+    }
+
+    app-logo {
+        height: 30%;
+    }
+}

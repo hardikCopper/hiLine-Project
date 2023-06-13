@@ -26,11 +26,14 @@
 
 .logo-container {
     width: 35.4%;
+    height: 26.375rem;
 }
 
 .logo-container-child {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 @media screen and (max-width: 992px) {
@@ -52,5 +55,15 @@
     .common-login-div-mobile {
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media screen and (min-height: 854px) and (max-width: 576px) {
+    .common-login-section {
+        height: 100%;
+    }
+
+    .common-login-div-mobile {
+        height: 100%;
     }
 }
