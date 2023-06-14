@@ -5,7 +5,7 @@
     @include Mix.BTN-Bold;
     border: 2px solid Var.$Secondary-Color;
     border-radius: 24px;
-    width: 100%;
+    width: 76%;
     padding: 0.8rem 0;
 }
 
@@ -55,7 +55,6 @@
     .submit-disabled {
         @include submitBtn;
         background-color: Var.$Tertiary-Color-Lighter;
-        width: 76%;
     }
 
     .submit-active {

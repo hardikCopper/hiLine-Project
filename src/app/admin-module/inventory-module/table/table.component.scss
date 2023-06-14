@@ -31,6 +31,17 @@
         }
     }
 
+    td {
+        input[type="checkbox"] {
+            margin: 0;
+            border: 2px solid Var.$Secondary-Color;
+            border-radius: 4px;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 1rem;
+        }
+    }
+
     .bl0 {
         border-left: 0;
     }

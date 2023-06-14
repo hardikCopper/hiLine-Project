@@ -1,10 +1,10 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="loginForm">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)" class="loginForm">
     <div class="heading-block">
         <h2>Login</h2>
     </div>
     <div class="inputBox">
         <label>Comapny Code*</label>
-        <input type="text" formControlName="companyCode" placeholder="Enter Company Code">
+        <input type="text" formControlName="company_code" placeholder="Enter Company Code">
         <p class="error">Invalid Company Code</p>
     </div>
     <div class="inputBox">

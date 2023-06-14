@@ -4,3 +4,10 @@ export type inventoryTabsType = {
     return: boolean;
     [key: string]: boolean;
 }
+
+export type loginData = {
+    company_code: string;
+    email: string;
+    password: string;
+    rememberMe?: boolean;
+}
