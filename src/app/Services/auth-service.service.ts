@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  token = ''
+  token = '';
+  private authenticated = false;
   constructor(private http: HttpClient, private cookieService: CookieService, private router: Router) { }
   login(sendObj: loginData) {
     const headers = { 'rest-api-key': '4d717e90-7323-423c-b198-47eabe4975a5' };
@@ -16,6 +17,7 @@ export class AuthServiceService {
     return this.http.post<any>('https://sis.hi-line.com/dev/api/api/user/login', body, { headers });
   }
   setToken(token: string, rememberMe: boolean) {
+    this.authenticated = true
     this.router.navigate(['/admin']);
     this.token = token;
     if (rememberMe) {
@@ -23,5 +25,8 @@ export class AuthServiceService {
       expirationDate.setDate(expirationDate.getDate() + 30);
       this.cookieService.set('loginToken', token, expirationDate);
     } else this.cookieService.set('loginToken', token, 0);
+  }
+  isLogin() {
+    return this.authenticated
   }
 }
