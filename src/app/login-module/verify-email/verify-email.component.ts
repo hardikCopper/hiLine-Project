@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ValidationService } from 'src/Common/Services/validation.service';
+import { ValidationService } from 'src/app/Common/Services/validation.service';
 
 @Component({
   selector: 'app-verify-email',

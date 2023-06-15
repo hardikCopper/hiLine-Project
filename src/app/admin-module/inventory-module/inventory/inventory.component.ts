@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { inventoryTabsType } from 'src/Common/Types';
+import { inventoryTabsType } from 'src/app/Common/Types';
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',

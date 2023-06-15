@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { loginData } from 'src/Common/Types';
+import { loginData } from '../Types';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
