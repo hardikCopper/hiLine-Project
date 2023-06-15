@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { OnInit } from '@angular/core';
-import { ValidationService } from '../../Services/validation.service';
-import { AuthServiceService } from 'src/app/Services/auth-service.service';
+import { ValidationService } from '../../../Common/Services/validation.service';
+import { AuthServiceService } from 'src/Common/Services/auth-service.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',

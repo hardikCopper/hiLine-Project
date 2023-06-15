@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  token = '';
   private authenticated = false;
   constructor(private http: HttpClient, private cookieService: CookieService, private router: Router) { }
   login(sendObj: loginData) {
@@ -17,9 +16,8 @@ export class AuthServiceService {
     return this.http.post<any>('https://sis.hi-line.com/dev/api/api/user/login', body, { headers });
   }
   setToken(token: string, rememberMe: boolean) {
-    this.authenticated = true
+    this.authenticated = true;
     this.router.navigate(['/admin']);
-    this.token = token;
     if (rememberMe) {
       const expirationDate = new Date();
       expirationDate.setDate(expirationDate.getDate() + 30);
@@ -27,6 +25,7 @@ export class AuthServiceService {
     } else this.cookieService.set('loginToken', token, 0);
   }
   isLogin() {
-    return this.authenticated
+    if (this.authenticated) return true;
+    else return this.cookieService.check('loginToken');
   }
 }
