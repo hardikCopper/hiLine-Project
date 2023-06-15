@@ -6,14 +6,15 @@ import {
   HttpInterceptor,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable()
 export class AddTokenInterceptor implements HttpInterceptor {
 
-  constructor() { }
+  constructor(private cookieService: CookieService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem('tokenKey');
+    const token = this.cookieService.get('loginToken');
     if (token && !request.url.includes('/login')) { // exclude login API from having token set in header
       request = request.clone({
         setHeaders: {

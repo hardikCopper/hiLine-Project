@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { loginData } from '../Types';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthServiceService {
   login(sendObj: loginData) {
     const headers = { 'rest-api-key': '4d717e90-7323-423c-b198-47eabe4975a5' };
     const body: loginData = { company_code: sendObj.company_code, email: sendObj.email, password: sendObj.password };
-    return this.http.post<any>('https://sis.hi-line.com/dev/api/api/user/login', body, { headers });
+    return this.http.post<any>(`${environment.apiUrl}/user/login`, body, { headers });
   }
   setToken(token: string, rememberMe: boolean) {
     this.authenticated = true;
