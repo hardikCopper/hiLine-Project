@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./log.component.scss']
 })
 export class LogComponent {
-
+  constructor() { }
+  
 }

@@ -19,10 +19,21 @@
             <div>Actions</div>
         </th>
     </tr>
-    <tr>
+    <tr *ngFor="let d of data">
         <td class="bl0">
-            <div><input type="checkbox">Job#</div>
+            <div><input type="checkbox">{{d.id}}</div>
         </td>
-        <td>$100</td>
+        <td>
+            <div>{{d.description}}</div>
+        </td>
+        <td>
+            <div>{{d.date}}</div>
+        </td>
+        <td>
+            <div>{{d.quantity}}</div>
+        </td>
+        <td>
+            <div>{{d.invoiced}}</div>
+        </td>
     </tr>
 </table>
