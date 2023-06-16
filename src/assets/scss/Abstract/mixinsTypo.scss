@@ -1,4 +1,4 @@
-@use 'src/assets/scss/variables' as Var;
+@use 'src/assets/scss/Abstract/variables' as Var;
 
 @mixin common($fontWeight, $fontSize, $lineHeight, $color) {
     font-family: Var.$Font-Family;
@@ -39,6 +39,7 @@
 @mixin BTN {
     @include common(normal, 16px, 16px, Var.$Neutral-Color-Dark);
 }
+
 @mixin BTN-Bold {
     @include common(bold, 16px, 16px, Var.$Secondary-Color);
 }

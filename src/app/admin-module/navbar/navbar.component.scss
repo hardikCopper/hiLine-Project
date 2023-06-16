@@ -1,5 +1,5 @@
-@use 'src/assets/scss/variables' as Var;
-@use 'src/assets/scss/mixinsTypo' as Mix;
+@use 'src/assets/scss/Abstract/variables' as Var;
+@use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
 
 .navBar-Section {
     background-color: Var.$Primary-Color;
@@ -30,20 +30,23 @@
         display: flex;
         align-items: center;
         height: 100%;
-        .profile-block{
+
+        .profile-block {
             height: 2rem;
             width: 2rem;
             border-radius: 50%;
             background-color: Var.$Tertiary-Color-Lighter;
             margin-right: 0.8rem;
         }
-        .name{
+
+        .name {
             @include Mix.H6;
             margin: 0;
             margin-right: 1.4375rem;
             color: Var.$Tertiary-Color-Lighter;
         }
-        .dropdown-block{
+
+        .dropdown-block {
             margin-right: 3rem;
         }
     }

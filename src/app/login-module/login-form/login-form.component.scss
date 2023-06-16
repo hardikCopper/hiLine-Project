@@ -1,6 +1,6 @@
-@use 'src/assets/scss/mixinsTypo' as Mix;
-@use 'src/assets/scss/variables' as Var;
-@use 'src/assets/scss/Components/loginForm' as LF;
+@use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
+@use 'src/assets/scss/Abstract/variables' as Var;
+@use 'src/assets/scss/Mixins/loginForm' as LF;
 
 .loginForm {
     @include LF.form;
@@ -16,9 +16,10 @@
     height: 4rem;
     align-items: flex-start;
     width: 76%;
+
     @media screen and (min-height: 854px) and (max-width: 576px) {
-            height: 13%;
-        }
+        height: 13%;
+    }
 
     label {
         display: flex;

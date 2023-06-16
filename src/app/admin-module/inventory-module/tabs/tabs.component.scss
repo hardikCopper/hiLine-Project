@@ -1,5 +1,5 @@
-@use 'src/assets/scss/mixinsTypo' as Mix;
-@use 'src/assets/scss/variables' as Var;
+@use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
+@use 'src/assets/scss/Abstract/variables' as Var;
 
 .tabs-section {
     display: flex;
@@ -12,7 +12,8 @@
         opacity: 0.4;
         padding-right: 0.75rem;
     }
-    h5:hover{
+
+    h5:hover {
         cursor: pointer;
     }
 

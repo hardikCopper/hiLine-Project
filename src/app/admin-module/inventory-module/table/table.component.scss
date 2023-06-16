@@ -1,5 +1,5 @@
-@use 'src/assets/scss/mixinsTypo' as Mix;
-@use 'src/assets/scss/variables' as Var;
+@use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
+@use 'src/assets/scss/Abstract/variables' as Var;
 
 .data-table {
     border-collapse: collapse;
@@ -32,6 +32,10 @@
     }
 
     td {
+        padding-left: 1rem;
+        height: 4rem;
+        align-items: center;
+
         input[type="checkbox"] {
             margin: 0;
             border: 2px solid Var.$Secondary-Color;
