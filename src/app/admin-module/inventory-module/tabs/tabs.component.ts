@@ -1,16 +1,14 @@
 import { Component, Input } from '@angular/core';
-
+import { activeTabType } from 'src/app/Common/Types';
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent {
-  @Input() activeTab = [{ activeState: true, text: 'INVENTORY LOG' },
-  { activeState: false, text: 'ADD INVENTORY' },
-  { activeState: false, text: 'RETURN INVENTORY' }]
+  @Input() activeTab: activeTabType[]=[];
   changeTab(activeIndex: number) {
-    this.activeTab.forEach((tab, index) => {
+    this.activeTab.forEach((tab: activeTabType, index: number) => {
       if (index === activeIndex) tab.activeState = true;
       else tab.activeState = false;
     })
