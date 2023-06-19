@@ -4,11 +4,7 @@ import { authGuard } from './Common/Guards/auth.guard';
 import { loginRedirectGuard } from './Common/Guards/login-redirect.guard';
 
 const routes: Routes = [{
-  path: '',
-  redirectTo: 'admin',
-  pathMatch: 'full'
-}, {
-  path: 'login', canActivate: [loginRedirectGuard],
+  path: '', canActivate: [loginRedirectGuard],
   loadChildren: () => import('./login-module/login.module').then(m => m.LoginModule)
 }, {
   path: 'admin', canActivate: [authGuard],

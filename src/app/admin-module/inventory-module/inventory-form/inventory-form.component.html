@@ -1,0 +1,36 @@
+<form [formGroup]="inventoryForm" class="inventory-form">
+    <section class="inputGrid">
+        <div class="inputBox">
+            <label>Job Number*</label>
+            <input type="number" placeholder="Enter Number">
+        </div>
+        <div class="inputBox">
+            <label>Job Description*</label>
+            <input type="text" placeholder="Enter text">
+        </div>
+        <div class="inputBox">
+            <label>Area</label>
+            <select id="cars" name="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+            </select>
+        </div>
+        <div class="inputBox">
+            <label>Part Number</label>
+            <input type="text" placeholder="Enter number">
+        </div>
+        <div class="inputBox">
+            <label>Part Description</label>
+            <input type="text" placeholder="Enter text">
+        </div>
+        <div class="inputBox">
+            <label>Quantity</label>
+            <input type="number" placeholder="Enter number">
+        </div>
+    </section>
+    <div class="btn-block">
+        <button>{{btn_name|uppercase}}</button>
+    </div>
+</form>

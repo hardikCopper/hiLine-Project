@@ -3,4 +3,10 @@
     <ng-container *ngIf="activeTab[0].activeState">
         <app-log></app-log>
     </ng-container>
+    <ng-container *ngIf="activeTab[1].activeState">
+        <app-add-inventory></app-add-inventory>
+    </ng-container>
+    <ng-container *ngIf="activeTab[2].activeState">
+        <app-return-inventory></app-return-inventory>
+    </ng-container>
 </section>
