@@ -35,6 +35,10 @@
         padding-left: 1rem;
         height: 4rem;
         align-items: center;
+        div{
+            display: flex;
+            align-items: center;
+        }
 
         input[type="checkbox"] {
             margin: 0;

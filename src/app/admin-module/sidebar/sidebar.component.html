@@ -1,6 +1,7 @@
 <section class="sidebar-section">
     <div class="iconBlock-parent" *ngFor="let route of activeRoute; let i = index">
-        <div class="iconBlock" [ngClass]="[route.activeState ?'active-route':'']" (click)="changeActiveRoute(i)">
+        <div class="iconBlock" [ngClass]="[route.activeState ?'active-route':'']"
+            (click)="changeActiveRoute(i,route.path)">
             <img [src]="!route.activeState ? route.blackUrl:route.whiteUrl">
         </div>
     </div>
