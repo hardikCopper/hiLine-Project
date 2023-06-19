@@ -4,6 +4,10 @@
     background-color: Var.$Hiline-Color-Light;
     height: 100%;
 
+    .active-route {
+        background-color: Var.$Secondary-Color;
+    }
+
     .iconBlock-parent {
         padding-top: 1rem;
 
@@ -22,6 +26,10 @@
                     fill: Var.$Neutral-Color-Dark;
                 }
             }
+        }
+
+        .iconBlock:hover {
+            cursor: pointer;
         }
     }
 }

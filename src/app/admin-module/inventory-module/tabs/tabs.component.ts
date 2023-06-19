@@ -1,21 +1,19 @@
 import { Component, Input } from '@angular/core';
-import { inventoryTabsType } from 'src/app/Common/Types';
+
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent {
-  @Input() activeTabs: inventoryTabsType = {
-    log: true,
-    add: false,
-    return: false
-  }
-  changeTab(tabName: string) {
-    for (let key in this.activeTabs) {
-      if (key === tabName) this.activeTabs[key] = true
-      else this.activeTabs[key] = false
-    }
+  @Input() activeTab = [{ activeState: true, text: 'INVENTORY LOG' },
+  { activeState: false, text: 'ADD INVENTORY' },
+  { activeState: false, text: 'RETURN INVENTORY' }]
+  changeTab(activeIndex: number) {
+    this.activeTab.forEach((tab, index) => {
+      if (index === activeIndex) tab.activeState = true;
+      else tab.activeState = false;
+    })
   }
 }
 

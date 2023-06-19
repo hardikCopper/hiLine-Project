@@ -1,27 +1,7 @@
 <section class="sidebar-section">
-    <div class="iconBlock-parent">
-        <div class="iconBlock">
-            <img src="/assets/Icons/Black_Sidebar/Inventory.svg">
-        </div>
-    </div>
-    <div class="iconBlock-parent">
-        <div class="iconBlock">
-            <img src="/assets/Icons/Black_Sidebar/Team.svg">
-        </div>
-    </div>
-    <div class="iconBlock-parent">
-        <div class="iconBlock">
-            <img src="/assets/Icons/Black_Sidebar/Price.svg">
-        </div>
-    </div>
-    <div class="iconBlock-parent">
-        <div class="iconBlock">
-            <img src="/assets/Icons/Black_Sidebar/Area.svg">
-        </div>
-    </div>
-    <div class="iconBlock-parent">
-        <div class="iconBlock">
-            <img src="/assets/Icons/Black_Sidebar/Parts.svg">
+    <div class="iconBlock-parent" *ngFor="let route of activeRoute; let i = index">
+        <div class="iconBlock" [ngClass]="[route.activeState ?'active-route':'']" (click)="changeActiveRoute(i)">
+            <img [src]="!route.activeState ? route.blackUrl:route.whiteUrl">
         </div>
     </div>
 </section>

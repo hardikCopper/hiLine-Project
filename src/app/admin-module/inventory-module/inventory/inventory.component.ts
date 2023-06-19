@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { inventoryTabsType } from 'src/app/Common/Types';
+
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent {
-  activeTabs: inventoryTabsType = {
-    log: true,
-    add: false,
-    return: false
-  }
+  activeTab = [{ activeState: true, text: 'INVENTORY LOG' },
+  { activeState: false, text: 'ADD INVENTORY' },
+  { activeState: false, text: 'RETURN INVENTORY' }]
 }

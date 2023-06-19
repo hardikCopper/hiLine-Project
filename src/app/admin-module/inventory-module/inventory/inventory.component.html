@@ -1,6 +1,6 @@
 <section class="inventory-section">
-    <app-tabs [activeTabs]="activeTabs"></app-tabs>
-    <ng-container *ngIf="activeTabs.log">
+    <app-tabs [activeTab]="activeTab"></app-tabs>
+    <ng-container *ngIf="activeTab[0].activeState">
         <app-log></app-log>
     </ng-container>
 </section>
