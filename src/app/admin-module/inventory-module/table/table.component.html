@@ -30,10 +30,16 @@
             <div>{{d.date}}</div>
         </td>
         <td>
-            <div>{{d.quantity}}</div>
+            <div class="quantity-block">{{d.quantity}}</div>
         </td>
         <td>
-            <div>{{d.invoiced}}</div>
+            <div class="invoiced-block"><span>{{d.invoiced}}</span><img src="assets/Icons/Dropdown_arrow.svg"></div>
+        </td>
+        <td>
+            <div>
+                <img src="assets/Icons/Edit.svg" class="mr1">
+                <img src="assets/Icons/Delete.svg" (click)="deleteRow()">
+            </div>
         </td>
     </tr>
 </table>

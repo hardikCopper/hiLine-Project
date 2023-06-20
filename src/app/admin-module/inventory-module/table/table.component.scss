@@ -7,11 +7,11 @@
 
     th {
         border: 1px solid Var.$Gray-3;
-        @include Mix.Th;
         height: 4rem;
         padding-left: 1rem;
 
         div {
+            @include Mix.Th;
             display: flex;
             align-items: center;
 
@@ -33,11 +33,26 @@
 
     td {
         padding-left: 1rem;
+        padding-right: 1rem;
         height: 4rem;
         align-items: center;
-        div{
+
+        .quantity-block {
+            justify-content: flex-end;
+        }
+
+        div {
+            @include Mix.Tr;
             display: flex;
             align-items: center;
+
+            img:hover {
+                cursor: pointer;
+            }
+        }
+
+        .invoiced-block {
+            justify-content: space-between;
         }
 
         input[type="checkbox"] {
@@ -56,5 +71,9 @@
 
     .br0 {
         border-right: 0;
+    }
+
+    .mr1 {
+        margin-right: 1rem;
     }
 }

@@ -1,0 +1,39 @@
+@use 'src/assets/scss/Abstract/variables' as Var;
+@use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
+
+.delete-modal-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: Var.$Tertiary-Color-Lighter;
+    padding: 2rem 3.25rem;
+    width: 18.25rem;
+    border: 1px solid #C0C0C0;
+    box-shadow: 0px 4px 4px rgba(192, 192, 192, 0.5);
+    border-radius: 8px;
+    height: 6.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            @include Mix.BTN-Bold;
+            background-color: transparent;
+            padding: 0.5625rem 2.1875rem;
+            border: 2px solid #00539F;
+            border-radius: 8px;
+        }
+    }
+
+    h6 {
+        @include Mix.H6;
+        margin: 0;
+        text-align: center;
+        width: 15.6875rem;
+    }
+}

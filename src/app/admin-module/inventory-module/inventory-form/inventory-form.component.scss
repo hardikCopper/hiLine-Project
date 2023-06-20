@@ -42,8 +42,8 @@
     .btn-block {
         height: 30%;
         display: flex;
-        justify-content: end;
-        align-items: end;
+        justify-content: flex-end;
+        align-items: flex-end;
 
         button {
             @include Mix.BTN-Bold;

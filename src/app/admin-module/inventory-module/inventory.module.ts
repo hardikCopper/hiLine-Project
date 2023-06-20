@@ -11,6 +11,7 @@ import { AddInventoryComponent } from './add-inventory/add-inventory.component';
 import { ReturnInventoryComponent } from './return-inventory/return-inventory.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 
 
 
@@ -22,7 +23,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     TableComponent,
     InventoryFormComponent,
     AddInventoryComponent,
-    ReturnInventoryComponent
+    ReturnInventoryComponent,
+    DeleteModalComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +32,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ReactiveFormsModule,
     FormsModule,
     NgSelectModule
-  ]
+  ],
+  exports: [DeleteModalComponent]
 })
 export class InventoryModule { }

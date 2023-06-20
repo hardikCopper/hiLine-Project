@@ -6,6 +6,8 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
+import { AdminModalComponent } from './admin-modal/admin-modal.component';
+import { InventoryModule } from './inventory-module/inventory.module';
 
 
 @NgModule({
@@ -13,11 +15,13 @@ import { FooterComponent } from './footer/footer.component';
     AdminLayoutComponent,
     NavbarComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    AdminModalComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    InventoryModule
   ]
 })
 export class AdminModule { }

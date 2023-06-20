@@ -7,17 +7,14 @@ export type loginData = {
 export type activeTabType = { activeState: boolean, text: string }
 
 export type jobDataType = {
-    "id": number|undefined,
-    "description": string|undefined,
-    "date": string|undefined,
-    "quantity": number|undefined,
-    "invoiced": string|undefined
+    "id": number | undefined,
+    "description": string | undefined,
+    "date": string | undefined,
+    "quantity": number | undefined,
+    "invoiced": string | undefined
 }
 
-// export type JobData = {
-//     id: number | undefined,
-//     description: string | undefined,
-//     date: string | undefined,
-//     quantity: number | undefined,
-//     invoiced: string | undefined
-// }
+export type modalStatesType = {
+    [key: string]: boolean;
+    deleteModal: boolean
+}
