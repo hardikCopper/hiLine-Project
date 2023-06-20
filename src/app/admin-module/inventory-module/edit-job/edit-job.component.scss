@@ -1,0 +1,11 @@
+@use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
+
+.editJob {
+    button {
+        @include Mix.BTN-Bold;
+        background-color: transparent;
+        padding: 0.5625rem 2.1875rem;
+        border: 2px solid #00539F;
+        border-radius: 8px;
+    }
+}

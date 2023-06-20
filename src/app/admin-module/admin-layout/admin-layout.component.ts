@@ -1,5 +1,8 @@
+import { state } from '@angular/animations';
 import { Component } from '@angular/core';
 import { ModalService } from 'src/app/Common/Services/modal.service';
+import { SwitchComponentsService } from 'src/app/Common/Services/switch-components.service';
+
 @Component({
   selector: 'app-admin-layout',
   templateUrl: './admin-layout.component.html',
@@ -7,8 +10,10 @@ import { ModalService } from 'src/app/Common/Services/modal.service';
 })
 export class AdminLayoutComponent {
   modelState: boolean = false
-  constructor(private modalService: ModalService) {
+  editJobState = false
+  constructor(private modalService: ModalService, private switchComponentsService: SwitchComponentsService) {
     modalService.getModalState().subscribe(state => this.modelState = state)
+    switchComponentsService.getEditJob().subscribe(state => this.editJobState = state)
   }
 
 }
