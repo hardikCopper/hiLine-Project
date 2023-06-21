@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class SwitchComponentsService {
   private editJob = new BehaviorSubject<boolean>(false);
   private editJobChanged = this.editJob.asObservable();
-
+  btnPress = false
   private navbar_right_menu = new BehaviorSubject<boolean>(false);
   private navbar_right_menuChanged = this.navbar_right_menu.asObservable();
   constructor() { }

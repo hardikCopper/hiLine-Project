@@ -41,6 +41,11 @@
             justify-content: flex-end;
         }
 
+        .id {
+            @include Mix.Tr-Bold;
+            color: Var.$Secondary-Color;
+        }
+
         div {
             @include Mix.Tr;
             display: flex;
@@ -53,6 +58,10 @@
 
         .invoiced-block {
             justify-content: space-between;
+
+            span {
+                @include Mix.Tr-Bold;
+            }
         }
 
         input[type="checkbox"] {

@@ -24,8 +24,10 @@
             margin-right: 18px;
         }
     }
-    div:hover{
+
+    div:hover {
         background-color: Var.$Tertiary-Color-Light;
+        cursor: pointer;
     }
 
 

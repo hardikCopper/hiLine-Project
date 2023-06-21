@@ -19,9 +19,10 @@
             <div>Actions</div>
         </th>
     </tr>
-    <tr *ngFor="let d of data">
+    <tr *ngFor="let d of data; even as isEven; odd as isOdd"
+        [ngStyle]="{ 'background-color': isEven ? '#e5eef5':'#ffffff'}">
         <td class="bl0">
-            <div><input type="checkbox">{{d.id}}</div>
+            <div><input type="checkbox"><span class="id">{{d.id}}</span></div>
         </td>
         <td>
             <div>{{d.description}}</div>
@@ -33,7 +34,10 @@
             <div class="quantity-block">{{d.quantity}}</div>
         </td>
         <td>
-            <div class="invoiced-block"><span>{{d.invoiced}}</span><img src="assets/Icons/Dropdown_arrow.svg"></div>
+            <div class="invoiced-block">
+                <span [ngStyle]="{ 'color': d.invoiced === 'Open' ? '#219653':'#F2994A'}">{{d.invoiced}}</span>
+                <img src="assets/Icons/Dropdown_arrow.svg">
+            </div>
         </td>
         <td>
             <div>
