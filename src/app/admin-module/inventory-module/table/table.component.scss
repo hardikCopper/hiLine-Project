@@ -5,10 +5,16 @@
     border-collapse: collapse;
     width: 100%;
 
+    .quantity {
+        width: 140px;
+        box-sizing: border-box;
+    }
+
     th {
         border: 1px solid Var.$Gray-3;
         height: 4rem;
         padding-left: 1rem;
+        padding-right: 1rem;
 
         div {
             @include Mix.Th;
@@ -35,7 +41,6 @@
         padding-left: 1rem;
         padding-right: 1rem;
         height: 4rem;
-        align-items: center;
 
         .quantity-block {
             justify-content: flex-end;
@@ -72,6 +77,11 @@
             height: 1.5rem;
             margin-right: 1rem;
         }
+    }
+
+    td:last-of-type {
+        display: flex;
+        justify-content: flex-end;
     }
 
     .bl0 {
