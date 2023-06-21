@@ -11,8 +11,11 @@
         <div class="profile-block"></div>
         <h6 class="name">Name</h6>
         <div class="dropdown-block">
-            <img src="/assets/Icons/Dropdown.svg" alt="">
+            <img src="/assets/Icons/Dropdown.svg" alt="" (click)="changeMenu()">
         </div>
+        <ng-container *ngIf="menuState">
+            <app-navbar-right-menu></app-navbar-right-menu>
+        </ng-container>
     </section>
 
 </header>

@@ -6,6 +6,11 @@
     height: 6.25rem;
     display: flex;
     justify-content: space-between;
+    padding-right: 3rem;
+
+    img:hover {
+        cursor: pointer;
+    }
 
     .leftSection {
         display: flex;
@@ -47,7 +52,7 @@
         }
 
         .dropdown-block {
-            margin-right: 3rem;
+            position: relative;
         }
     }
 }

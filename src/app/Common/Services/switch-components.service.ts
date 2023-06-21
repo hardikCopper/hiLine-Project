@@ -7,6 +7,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class SwitchComponentsService {
   private editJob = new BehaviorSubject<boolean>(false);
   private editJobChanged = this.editJob.asObservable();
+
+  private navbar_right_menu = new BehaviorSubject<boolean>(false);
+  private navbar_right_menuChanged = this.navbar_right_menu.asObservable();
   constructor() { }
   getEditJob(): Observable<boolean> {
     return this.editJobChanged
@@ -16,5 +19,12 @@ export class SwitchComponentsService {
   }
   removeEditJob() {
     this.editJob.next(false)
+  }
+  getNavbarRightMenu(): Observable<boolean> {
+    return this.navbar_right_menuChanged
+  }
+  changeNavbarRightMenu() {
+    let value = !this.navbar_right_menu.getValue()
+    this.navbar_right_menu.next(value)
   }
 }

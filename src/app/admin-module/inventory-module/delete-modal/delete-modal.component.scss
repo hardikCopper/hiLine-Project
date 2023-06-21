@@ -25,7 +25,7 @@
             @include Mix.BTN-Bold;
             background-color: transparent;
             padding: 0.5625rem 2.1875rem;
-            border: 2px solid #00539F;
+            border: 2px solid Var.$Secondary-Color;
             border-radius: 8px;
         }
     }

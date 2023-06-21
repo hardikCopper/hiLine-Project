@@ -1,0 +1,32 @@
+@use 'src/assets/scss/Abstract/variables' as Var;
+@use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
+
+.right-menu-section {
+    position: relative;
+    left: -50px;
+    background: white;
+    border: 2px solid Var.$Secondary-Color;
+
+    div {
+        width: 189px;
+        height: 48px;
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+        padding: 14px;
+
+        h6 {
+            @include Mix.H6;
+            margin: 0;
+        }
+
+        img {
+            margin-right: 18px;
+        }
+    }
+    div:hover{
+        background-color: Var.$Tertiary-Color-Light;
+    }
+
+
+}

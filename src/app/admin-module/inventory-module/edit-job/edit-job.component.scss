@@ -50,9 +50,9 @@
     .editJob {
         button {
             @include Mix.BTN-Bold;
-            background-color: #00539F;
+            background-color: Var.$Secondary-Color;
             padding: 0.5625rem 2.1875rem;
-            border: 2px solid #00539F;
+            border: 2px solid Var.$Secondary-Color;
             border-radius: 8px;
             color: Var.$Tertiary-Color-Lighter;
             text-transform: uppercase;

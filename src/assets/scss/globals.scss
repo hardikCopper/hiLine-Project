@@ -24,6 +24,12 @@ app-edit-job {
     height: 100%;
 }
 
+app-navbar-right-menu {
+    position: absolute;
+    right: 0;
+    top: 70px;
+}
+
 button:hover,
 input[type="checkbox"]:hover {
     cursor: pointer;

@@ -8,6 +8,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AdminModalComponent } from './admin-modal/admin-modal.component';
 import { InventoryModule } from './inventory-module/inventory.module';
+import { NavbarRightMenuComponent } from './navbar-right-menu/navbar-right-menu.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { InventoryModule } from './inventory-module/inventory.module';
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
-    AdminModalComponent
+    AdminModalComponent,
+    NavbarRightMenuComponent
   ],
   imports: [
     CommonModule,
