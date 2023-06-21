@@ -5,8 +5,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SwitchComponentsService {
-  editJob = new BehaviorSubject<boolean>(false);
-  editJobChanged = this.editJob.asObservable();
+  private editJob = new BehaviorSubject<boolean>(false);
+  private editJobChanged = this.editJob.asObservable();
   constructor() { }
   getEditJob(): Observable<boolean> {
     return this.editJobChanged

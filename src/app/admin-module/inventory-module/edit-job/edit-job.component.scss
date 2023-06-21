@@ -1,11 +1,66 @@
 @use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
+@use 'src/assets/scss/Abstract/variables' as Var;
 
-.editJob {
-    button {
-        @include Mix.BTN-Bold;
-        background-color: transparent;
-        padding: 0.5625rem 2.1875rem;
-        border: 2px solid #00539F;
-        border-radius: 8px;
+.editJob-section {
+    padding-left: 23px;
+    padding-right: 34px;
+    width: calc(100% - 57px);
+    padding-top: 29px;
+
+    form {
+        padding: 1rem;
+        height: 166px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: Var.$Tertiary-Color-Light;
+        box-shadow: 0px 4px 4px rgba(192, 192, 192, 0.5);
+
+        input {
+            width: calc(100% - 8px);
+            height: 40px;
+            margin-top: 4px;
+        }
+
+        label {
+            @include Mix.Label;
+        }
+    }
+
+    .top-block {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        h5 {
+            @include Mix.H5;
+            margin: 0;
+        }
+
+        img:hover {
+            cursor: pointer;
+        }
+
+        img {
+            margin-right: 1rem;
+        }
+    }
+
+    .editJob {
+        button {
+            @include Mix.BTN-Bold;
+            background-color: #00539F;
+            padding: 0.5625rem 2.1875rem;
+            border: 2px solid #00539F;
+            border-radius: 8px;
+            color: Var.$Tertiary-Color-Lighter;
+            text-transform: uppercase;
+        }
+    }
+
+    .bottom-block {
+        display: flex;
+        justify-content: flex-end;
     }
 }
