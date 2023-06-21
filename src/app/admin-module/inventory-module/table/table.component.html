@@ -1,7 +1,8 @@
 <table class="data-table">
     <tr>
         <th class="bl0">
-            <div><input type="checkbox">Job#<img src="assets/Icons/SortUp&Down.svg"></div>
+            <div><input type="checkbox" (click)="toggleAllCheckbox()">Job#<img src=" assets/Icons/SortUp&Down.svg">
+            </div>
         </th>
         <th>
             <div>Job Description</div>
@@ -19,10 +20,10 @@
             <div>Actions</div>
         </th>
     </tr>
-    <tr *ngFor="let d of data; even as isEven; odd as isOdd"
+    <tr *ngFor="let d of data; even as isEven; odd as isOdd;trackBy: trackByIndex;"
         [ngStyle]="{ 'background-color': isEven ? '#e5eef5':'#ffffff'}">
         <td class="bl0">
-            <div><input type="checkbox"><span class="id">{{d.id}}</span></div>
+            <div><input type="checkbox" [(ngModel)]='d.checkboxState'><span class="id">{{d.id}}</span></div>
         </td>
         <td>
             <div>{{d.description}}</div>

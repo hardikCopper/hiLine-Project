@@ -11,7 +11,8 @@ export type jobDataType = {
     "description": string | undefined,
     "date": string | undefined,
     "quantity": number | undefined,
-    "invoiced": string | undefined
+    "invoiced": string | undefined,
+    "checkboxState": boolean | undefined
 }
 
 export type modalStatesType = {

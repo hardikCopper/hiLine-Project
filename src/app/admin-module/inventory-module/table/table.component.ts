@@ -15,6 +15,17 @@ export class TableComponent implements OnInit {
     this.jobDataService.fetchJobData()
     this.jobDataService.getJobData().subscribe(data => {
       this.data = data
+      data.forEach(item => {
+        item.checkboxState = false
+      })
+    })
+  }
+  trackByIndex(index: number, item: any): number {
+    return item.id;
+  }
+  toggleAllCheckbox() {
+    this.data.forEach(item => {
+      item.checkboxState = !item.checkboxState
     })
   }
   deleteRow() {
