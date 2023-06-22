@@ -4,11 +4,6 @@
 <app-navbar></app-navbar>
 <div class="middle-block">
     <app-sidebar></app-sidebar>
-    <ng-container *ngIf="editJobState; else main_content">
-        <app-edit-job></app-edit-job>
-    </ng-container>
+    <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>
-<ng-template #main_content>
-    <router-outlet></router-outlet>
-</ng-template>

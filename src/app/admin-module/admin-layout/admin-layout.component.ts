@@ -10,10 +10,8 @@ import { SwitchComponentsService } from 'src/app/Common/Services/switch-componen
 })
 export class AdminLayoutComponent {
   modelState: boolean = false
-  editJobState = false
   constructor(private modalService: ModalService, private switchComponentsService: SwitchComponentsService) {
     modalService.getModalState().subscribe(state => this.modelState = state)
-    switchComponentsService.getEditJob().subscribe(state => this.editJobState = state)
   }
 
 }
