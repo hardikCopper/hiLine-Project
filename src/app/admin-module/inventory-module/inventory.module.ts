@@ -13,6 +13,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 import { EditJobComponent } from './edit-job/edit-job.component';
+import { TableFooterComponent } from './table-footer/table-footer.component';
 
 
 
@@ -26,7 +27,8 @@ import { EditJobComponent } from './edit-job/edit-job.component';
     AddInventoryComponent,
     ReturnInventoryComponent,
     DeleteModalComponent,
-    EditJobComponent
+    EditJobComponent,
+    TableFooterComponent
   ],
   imports: [
     CommonModule,

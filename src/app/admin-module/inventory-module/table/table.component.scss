@@ -40,7 +40,8 @@
     td {
         padding-left: 1rem;
         padding-right: 1rem;
-        height: 4rem;
+        height: 3.125rem;
+        box-sizing: border-box;
 
         .quantity-block {
             justify-content: flex-end;

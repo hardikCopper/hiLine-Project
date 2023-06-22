@@ -1,0 +1,38 @@
+@use 'src/assets/scss/Abstract/MixinsTypo' as Mix;
+@use 'src/assets/scss/Abstract/Variables' as Var;
+
+.footer-Section {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-end;
+
+    .table-footer {
+        display: flex;
+        width: 25rem;
+        justify-content: space-between;
+
+        .left-block {
+            span {
+                @include Mix.Body;
+                margin-right: 1.25rem;
+                color: Var.$Gray-1;
+            }
+        }
+
+        .right-block {
+            display: flex;
+
+            span {
+                margin-right: 1.62rem;
+            }
+
+            div {
+                img:first-of-type {
+                    transform: rotate(180deg);
+                    margin-right: 1.82rem;
+                }
+            }
+        }
+    }
+}
