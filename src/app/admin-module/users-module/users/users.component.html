@@ -1,1 +1,67 @@
-<p>users works!</p>
+<section class="user-section">
+    <h3 class="heading">User Managemnet</h3>
+    <table class="data-table">
+        <tr>
+            <th class="bl0">
+                <div>
+                    <input type="checkbox" (click)="toggleAllCheckbox()">Employee Id<img
+                        src=" assets/Icons/SortUp&Down.svg">
+                </div>
+            </th>
+            <th>
+                <div>Employee Name<img src=" assets/Icons/SortUp&Down.svg"></div>
+            </th>
+            <th>
+                <div>Email<img src="assets/Icons/SortUp&Down.svg"></div>
+            </th>
+            <th>
+                <div>Role<img src="assets/Icons/SortUp&Down.svg"></div>
+            </th>
+            <th>
+                <div>Password</div>
+            </th>
+            <th>
+                <div>Status</div>
+            </th>
+            <th>
+                <div>Password Reset</div>
+            </th>
+            <th class="br0">
+                <div>Actions</div>
+            </th>
+        </tr>
+        <tr *ngFor="let d of data; even as isEven; odd as isOdd;trackBy: trackByIndex;"
+            [ngStyle]="{ 'background-color': isEven ? '#e5eef5':'#ffffff'}">
+            <td class="bl0">
+                <div><input type="checkbox" [(ngModel)]='d.checkboxState'><span>{{d.id}}</span></div>
+            </td>
+            <td>
+                <div>{{d.name}}</div>
+            </td>
+            <td>
+                <div>{{d.email}}</div>
+            </td>
+            <td>
+                <div>{{d.role}}</div>
+            </td>
+            <td>
+                <div>
+                    <span>{{d.password}}</span>
+                    <img src="assets/Icons/Dropdown_arrow.svg">
+                </div>
+            </td>
+            <td>
+                <div>{{d.status}}</div>
+            </td>
+            <td>
+                <div>Reset</div>
+            </td>
+            <td>
+                <div>
+                    <img src="assets/Icons/Edit.svg" class="mr1" (click)="openEdit(d.id)">
+                    <img src="assets/Icons/Delete.svg" (click)="deleteRow()">
+                </div>
+            </td>
+        </tr>
+    </table>
+</section>

@@ -1,0 +1,22 @@
+@use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
+@use 'src/assets/scss/Abstract/variables' as Var;
+@use 'src/assets/scss/Mixins/dataTable' as DF;
+
+.user-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: calc(100% - 3rem);
+    height: 100%;
+    overflow-y: auto;
+
+    .heading {
+        @include Mix.H3-Bold;
+        padding-top: 2rem;
+        padding-bottom: 1.12rem;
+        margin: 0;
+    }
+
+    .data-table {
+        @include DF.table;
+    }
+}
