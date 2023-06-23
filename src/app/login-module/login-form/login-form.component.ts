@@ -15,6 +15,11 @@ export class LoginFormComponent implements OnInit {
     email: false,
     password: false
   }
+  isValid: isEmptyType = {
+    companyCode: true,
+    email: true,
+    password: true
+  }
   constructor(private fb: FormBuilder, private vs: ValidationService, private authService: AuthServiceService) {
     this.loginForm = this.fb.group({
       companyCode: vs.validators.alphanumeric,
@@ -28,6 +33,8 @@ export class LoginFormComponent implements OnInit {
       this.loginForm.get(controlName)?.valueChanges.subscribe((value: any) => {
         if (value === '') this.isEmpty[controlName] = true;
         else this.isEmpty[controlName] = false
+        if (this.loginForm.controls[controlName].invalid && this.loginForm.controls[controlName].touched) this.isValid[controlName] = false
+        else this.isValid[controlName] = true
       })
     }
   }
