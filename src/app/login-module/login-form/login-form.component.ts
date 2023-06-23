@@ -22,7 +22,7 @@ export class LoginFormComponent implements OnInit {
   }
   constructor(private fb: FormBuilder, private vs: ValidationService, private authService: AuthServiceService) {
     this.loginForm = this.fb.group({
-      companyCode: vs.validators.alphanumeric,
+      company_code: vs.validators.alphanumeric,
       email: vs.validators.email,
       password: ['', Validators.required],
       rememberMe: vs.validators.state
