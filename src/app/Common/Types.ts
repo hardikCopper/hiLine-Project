@@ -31,7 +31,7 @@ export type modalStatesType = {
 }
 export type isEmptyType = {
     [controlName: string]: boolean;
-    companyCode: boolean,
+    company_code: boolean,
     email: boolean,
     password: boolean
 }

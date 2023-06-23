@@ -5,7 +5,8 @@
     <div class="inputBox">
         <label>Comapny Code*</label>
         <input type="text" formControlName="companyCode" placeholder="Enter Company Code">
-        <p class="error" [ngStyle]="{'visiblity': isValid.companyCode ? 'visible' : 'hidden'}">{{!isEmpty.companyCode ?
+        <p class="error" [ngStyle]="{'visiblity': isValid.company_code ? 'visible' : 'hidden'}">{{!isEmpty.company_code
+            ?
             'Invalid Company Code' : 'Company Code is Required'}}</p>
     </div>
     <div class="inputBox">

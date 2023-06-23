@@ -11,12 +11,12 @@ import { AuthServiceService } from 'src/app/Common/Services/auth-service.service
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup
   isEmpty: isEmptyType = {
-    companyCode: false,
+    company_code: false,
     email: false,
     password: false
   }
   isValid: isEmptyType = {
-    companyCode: true,
+    company_code: true,
     email: true,
     password: true
   }
@@ -41,6 +41,7 @@ export class LoginFormComponent implements OnInit {
 
   onSubmit(event: Event) {
     event.preventDefault();
+    console.log('this.loginForm.value: ', this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe(res => {
       console.log('res: ', res);
       if (res.response_code === 200) {
