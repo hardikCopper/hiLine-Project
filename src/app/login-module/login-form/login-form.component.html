@@ -4,18 +4,18 @@
     </div>
     <div class="inputBox">
         <label>Comapny Code*</label>
-        <input type="text" formControlName="company_code" placeholder="Enter Company Code">
-        <p class="error">Invalid Company Code</p>
+        <input type="text" formControlName="companyCode" placeholder="Enter Company Code">
+        <p class="error">{{!isEmpty.companyCode ? 'Invalid Company Code' : 'Company Code is Required'}}</p>
     </div>
     <div class="inputBox">
         <label>Email/Employee Id*</label>
         <input type="email" formControlName="email" placeholder="Enter Email/Employee ID">
-        <p class="error">Invalid Email Address</p>
+        <p class="error">{{!isEmpty.email ? 'Invalid Email Address' : 'Email Address is Required'}}</p>
     </div>
     <div class="inputBox">
         <label>Password*</label>
         <input type="password" formControlName="password" placeholder="Enter Password">
-        <p class="error">Invalid Password</p>
+        <p class="error">{{!isEmpty.password ? 'Invalid Password' : 'Password is Required'}}</p>
     </div>
     <div class="extra-options">
         <label>

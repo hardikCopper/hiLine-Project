@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { ValidationService } from 'src/app/Common/Services/validation.service';
 
@@ -13,8 +13,12 @@ export class InventoryFormComponent {
   inventoryForm: FormGroup
   constructor(private fb: FormBuilder, private vs: ValidationService) {
     this.inventoryForm = this.fb.group({
-      companyCode: vs.validators.companyCode,
-      email: vs.validators.email
+      Job_Number: this.vs.validators.numbers,
+      Description: this.vs.validators.text,
+      Area: this.vs.validators.text,
+      Part_Number: this.vs.validators.alphanumeric,
+      Part_Description: this.vs.validators.text,
+      Quantity: this.vs.validators.numbers
     });
   }
 }

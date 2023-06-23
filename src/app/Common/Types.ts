@@ -29,3 +29,9 @@ export type modalStatesType = {
     [key: string]: boolean;
     deleteModal: boolean
 }
+export type isEmptyType = {
+    [controlName: string]: boolean;
+    companyCode: boolean,
+    email: boolean,
+    password: boolean
+}

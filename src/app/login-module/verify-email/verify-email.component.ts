@@ -13,7 +13,7 @@ export class VerifyEmailComponent {
   timerEnd = false
   constructor(private fb: FormBuilder, vs: ValidationService) {
     this.verifyEmail = this.fb.group({
-      verifyCode: vs.validators.verifyCode
+      verifyCode: vs.validators.numbers
     });
     let timeInterval = setInterval(() => {
       if (this.time > 0) this.time--;

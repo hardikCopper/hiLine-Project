@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { OnInit } from '@angular/core';
+import { isEmptyType } from 'src/app/Common/Types';
 import { ValidationService } from 'src/app/Common/Services/validation.service';
 import { AuthServiceService } from 'src/app/Common/Services/auth-service.service';
 @Component({
@@ -10,16 +10,26 @@ import { AuthServiceService } from 'src/app/Common/Services/auth-service.service
 })
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup
+  isEmpty: isEmptyType = {
+    companyCode: false,
+    email: false,
+    password: false
+  }
   constructor(private fb: FormBuilder, private vs: ValidationService, private authService: AuthServiceService) {
     this.loginForm = this.fb.group({
-      company_code: vs.validators.companyCode,
+      companyCode: vs.validators.alphanumeric,
       email: vs.validators.email,
       password: ['', Validators.required],
-      rememberMe: vs.validators.rememberMe
+      rememberMe: vs.validators.state
     });
   }
   ngOnInit() {
-
+    for (let controlName in this.loginForm.controls) {
+      this.loginForm.get(controlName)?.valueChanges.subscribe((value: any) => {
+        if (value === '') this.isEmpty[controlName] = true;
+        else this.isEmpty[controlName] = false
+      })
+    }
   }
 
   onSubmit(event: Event) {

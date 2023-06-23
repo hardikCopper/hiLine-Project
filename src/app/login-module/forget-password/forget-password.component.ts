@@ -11,7 +11,7 @@ export class ForgetPasswordComponent {
   forgetPass: FormGroup
   constructor(private fb: FormBuilder, private vs: ValidationService) {
     this.forgetPass = this.fb.group({
-      companyCode: vs.validators.companyCode,
+      companyCode: vs.validators.alphanumeric,
       email: vs.validators.email
     });
   }
