@@ -9,7 +9,7 @@ export class HiddenPasswordPipe implements PipeTransform {
     let hiddenPassword = "";
 
     for (let i = 0; i < value.length; i++) {
-      hiddenPassword += "*";
+      hiddenPassword += "*  ";
     }
 
     return hiddenPassword;

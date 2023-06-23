@@ -45,13 +45,13 @@
                 <div>{{d.role}}</div>
             </td>
             <td>
-                <div>
-                    <span>{{d.password}}</span>
-                    <img src="assets/Icons/Dropdown_arrow.svg">
+                <div class="password-block">
+                    <span>{{d.password | hiddenPassword}}</span>
+                    <img src="assets/Icons/hide.svg">
                 </div>
             </td>
             <td>
-                <div>{{d.status}}</div>
+                <div class="toggle_btn"><input type="checkbox" value="d.checkboxState" checked={{d.status}}></div>
             </td>
             <td>
                 <div class="resetBtn">Reset</div>
@@ -64,4 +64,7 @@
             </td>
         </tr>
     </table>
+    <app-table-footer [positionLast]=false>
+        <button class="addBtn">Add</button>
+    </app-table-footer>
 </section>

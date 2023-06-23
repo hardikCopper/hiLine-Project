@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table-footer',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./table-footer.component.scss']
 })
 export class TableFooterComponent {
-
+  @Input() positionLast: boolean | undefined
 }

@@ -1,0 +1,81 @@
+@mixin toogle {
+    .toggle_btn {
+
+        input[type="checkbox"] {
+
+            position: relative;
+
+            width: 40px;
+
+            height: 24px;
+
+            -webkit-appearance: none;
+
+            appearance: none;
+
+            background-color: lightgray;
+
+            outline: none;
+
+            border-radius: 2rem;
+
+            cursor: pointer;
+
+            box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
+
+        }
+
+        input[type="checkbox"]::before {
+
+            content: "";
+
+            width: 16px;
+
+            height: 16px;
+
+            border-radius: 50%;
+
+            background: #fff;
+
+            transition: 0.5s;
+
+        }
+
+        input[type="checkbox"]::before {
+
+            content: "";
+
+            width: 16px;
+
+            height: 16px;
+
+            border-radius: 50%;
+
+            background: #fff;
+
+            display: flex;
+
+            margin: 4px 3px;
+
+            transition: 0.5s;
+
+        }
+
+        input[type="checkbox"]:checked::before {
+
+            align-items: center;
+
+            transform: translateX(100%);
+
+            background: #fff;
+
+        }
+
+        input[type="checkbox"]:checked {
+
+            background: #27ae60;
+
+        }
+
+    }
+}

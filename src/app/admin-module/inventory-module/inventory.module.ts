@@ -13,7 +13,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 import { EditJobComponent } from './edit-job/edit-job.component';
-import { TableFooterComponent } from './table-footer/table-footer.component';
+import { SharedModuleModule } from 'src/app/shared-module/shared-module.module';
 
 
 
@@ -27,15 +27,15 @@ import { TableFooterComponent } from './table-footer/table-footer.component';
     AddInventoryComponent,
     ReturnInventoryComponent,
     DeleteModalComponent,
-    EditJobComponent,
-    TableFooterComponent
+    EditJobComponent
   ],
   imports: [
     CommonModule,
     InventoryRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    SharedModuleModule
   ],
   exports: [DeleteModalComponent,
     EditJobComponent]

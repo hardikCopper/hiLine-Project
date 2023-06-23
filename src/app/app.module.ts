@@ -5,12 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddTokenInterceptor } from './Common/Interceptors/add-token.interceptor';
-import { HiddenPasswordPipe } from './Common/Pipes/hidden-password.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HiddenPasswordPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
-<section class="footer-Section">
+<section class="footer-Section" [ngStyle]="{'justify-content':positionLast?'flex-end':'space-between'}">
+    <ng-content></ng-content>
     <div class="table-footer">
         <div class="left-block">
             <span>Rows per page : 10</span>

@@ -9,6 +9,19 @@
     height: 100%;
     overflow-y: auto;
 
+    .addBtn {
+        @include Mix.BTN-Bold;
+        border-radius: 8px;
+        background: Var.$Secondary-Color;
+        color: Var.$Tertiary-Color-Lighter;
+        border: none;
+        text-transform: uppercase;
+        display: inline-flex;
+        padding: 0.5625rem 2.0625rem;
+        align-items: center;
+        gap: 0.625rem;
+    }
+
     .heading {
         @include Mix.H3-Bold;
         padding-top: 2rem;
@@ -30,6 +43,62 @@
 
         .resetBtn {
             color: Var.$Secondary-Color !important;
+        }
+
+        .password-block {
+
+            span {
+                font-size: 1rem !important;
+                margin-right: 1.19rem;
+                position: relative;
+                top: 3px;
+            }
+        }
+
+        .toggle_btn {
+
+            input[type="checkbox"] {
+                position: relative;
+                width: 40px;
+                height: 24px;
+                -webkit-appearance: none;
+                appearance: none;
+                background-color: lightgray;
+                outline: none;
+                border-radius: 2rem;
+                cursor: pointer;
+                border: none !important;
+            }
+
+            input[type="checkbox"]::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: #fff;
+                transition: 0.5s;
+            }
+
+            input[type="checkbox"]::before {
+                content: "";
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: #fff;
+                display: flex;
+                margin: 4px 3px;
+                transition: 0.5s;
+            }
+
+            input[type="checkbox"]:checked::before {
+                align-items: center;
+                transform: translateX(100%);
+                background: #fff;
+            }
+
+            input[type="checkbox"]:checked {
+                background: #27ae60;
+            }
         }
     }
 }
