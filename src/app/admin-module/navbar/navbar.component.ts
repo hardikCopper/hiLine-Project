@@ -16,4 +16,7 @@ export class NavbarComponent {
     this.scs.btnPress = true;
     this.scs.changeNavbarRightMenu();
   }
+  changeSideBarLife() {
+    this.scs.chanageShowSideBar();
+  }
 }

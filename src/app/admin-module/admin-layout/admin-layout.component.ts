@@ -10,8 +10,11 @@ import { SwitchComponentsService } from 'src/app/Common/Services/switch-componen
 })
 export class AdminLayoutComponent {
   modelState: boolean = false
-  constructor(private modalService: ModalService, private switchComponentsService: SwitchComponentsService) {
-    modalService.getModalState().subscribe(state => this.modelState = state)
+  showSideBar = false
+  constructor(private modalService: ModalService, private scs: SwitchComponentsService) {
+    modalService.getModalState().subscribe(state => this.modelState = state);
+    scs.getShowSideBar().subscribe(state => this.showSideBar = state);
   }
+
 
 }

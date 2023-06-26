@@ -7,6 +7,7 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
+  showSideBar = false
   activeRoute = [{ activeState: false, path: '', blackUrl: '/assets/Icons/Black_Sidebar/Inventory.svg', whiteUrl: '/assets/Icons/White_Sidebar/Inventory.svg' },
   { activeState: false, path: 'users', blackUrl: '/assets/Icons/Black_Sidebar/Team.svg', whiteUrl: '/assets/Icons/White_Sidebar/Team.svg' },
   { activeState: false, path: 'price_and_parts', blackUrl: '/assets/Icons/Black_Sidebar/Price.svg', whiteUrl: '/assets/Icons/White_Sidebar/Price.svg' },
@@ -21,10 +22,11 @@ export class SidebarComponent {
           if (event.url === `/admin${routePath}`) route.activeState = true;
           else route.activeState = false
         })
-        console.log('Path changed:', event.url);
         // Do whatever you need to do here
       }
     });
+
+
   }
   changeActiveRoute(path: string | undefined) {
     this.router.navigate([path], { relativeTo: this.route });

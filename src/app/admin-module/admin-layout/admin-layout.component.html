@@ -3,7 +3,9 @@
 </ng-container>
 <app-navbar></app-navbar>
 <div class="middle-block">
+    <ng-container *ngIf="showSideBar">
     <app-sidebar></app-sidebar>
+    </ng-container>
     <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>
