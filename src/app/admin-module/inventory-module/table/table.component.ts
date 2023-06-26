@@ -30,7 +30,7 @@ export class TableComponent implements OnInit {
   }
   deleteRow() {
     this.modalService.btnPress = true;
-    this.modalService.onModelState('deleteModal')
+    this.modalService.onModelStates('deleteModal')
   }
   openEdit(path: number | undefined) {
     console.log('path: ', path);

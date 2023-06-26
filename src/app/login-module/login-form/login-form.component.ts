@@ -27,13 +27,15 @@ export class LoginFormComponent implements OnInit {
       password: ['', Validators.required],
       rememberMe: vs.validators.state
     });
+    console.log('this.loginForm: ', this.loginForm);
   }
   ngOnInit() {
     for (let controlName in this.loginForm.controls) {
       this.loginForm.get(controlName)?.valueChanges.subscribe((value: any) => {
+        console.log(controlName, ' value: ', value);
         if (value === '') this.isEmpty[controlName] = true;
         else this.isEmpty[controlName] = false
-        if (this.loginForm.controls[controlName].invalid && this.loginForm.controls[controlName].touched) this.isValid[controlName] = false
+        if (this.loginForm.controls[controlName].invalid) this.isValid[controlName] = false
         else this.isValid[controlName] = true
       })
     }

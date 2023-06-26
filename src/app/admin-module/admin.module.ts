@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AdminModalComponent } from './admin-modal/admin-modal.component';
 import { InventoryModule } from './inventory-module/inventory.module';
 import { NavbarRightMenuComponent } from './navbar-right-menu/navbar-right-menu.component';
+import { UsersModuleModule } from 'src/app/admin-module/users-module/users-module.module'
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NavbarRightMenuComponent } from './navbar-right-menu/navbar-right-menu.
   imports: [
     CommonModule,
     AdminRoutingModule,
-    InventoryModule
+    InventoryModule,
+    UsersModuleModule
   ]
 })
 export class AdminModule { }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChildren, AfterViewInit, QueryList } from '@angular/core';
 import { ModalService } from 'src/app/Common/Services/modal.service';
 import { modalStatesType } from 'src/app/Common/Types';
 
@@ -9,27 +9,23 @@ import { modalStatesType } from 'src/app/Common/Types';
 })
 export class AdminModalComponent implements AfterViewInit {
   modalStates: modalStatesType;
-
-  @ViewChild('child', { read: ElementRef })
-  child: ElementRef<HTMLElement> | null;
+  @ViewChildren('child', { read: ElementRef }) childList: QueryList<ElementRef> | null;
   childElement: HTMLElement | null
   constructor(private elementRef: ElementRef, private modalService: ModalService) {
     this.modalStates = this.modalService.modelStates
-    this.child = null;
+    this.childList = null;
     this.childElement = null;
   }
 
   ngAfterViewInit() {
-    if (this.child) {
-      this.childElement = this.child.nativeElement;
-    }
+      this.childElement = this.childList?.first.nativeElement;
   }
 
   @HostListener('document:click', ['$event'])
   clickOutsideComponent(event: Event) {
     if (!this.modalService.btnPress && this.childElement) {
       if (!this.childElement.contains(event.target as Node)) {
-        this.modalService.offModelState();
+        this.modalService.offModelStates();
       }
     }
     else this.modalService.btnPress = false

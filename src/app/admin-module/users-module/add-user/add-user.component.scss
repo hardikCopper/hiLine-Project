@@ -1,0 +1,56 @@
+@use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
+@use 'src/assets/scss/Abstract/variables' as Var;
+
+.inventory-form {
+    margin-top: 1.625rem;
+    height: 16.875rem;
+    background: Var.$Tertiary-Color-Light;
+    box-shadow: 0px 4px 4px rgba(192, 192, 192, 0.5);
+    padding: 1rem;
+    box-sizing: border-box;
+
+    .inputGrid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        row-gap: 2.25rem;
+        column-gap: 1rem;
+
+        .inputBox {
+            display: flex;
+            flex-direction: column;
+
+            input {
+                height: 2.5rem;
+            }
+
+            select {
+                height: 2.8rem;
+            }
+
+            input,
+            select {
+                padding-left: 0.5rem;
+            }
+
+            label {
+                @include Mix.Label;
+                margin-bottom: 0.25rem;
+            }
+        }
+    }
+
+    .btn-block {
+        display: flex;
+        justify-content: flex-end;
+        align-items: start;
+
+        button {
+            @include Mix.BTN-Bold;
+            border-radius: 8px;
+            background-color: Var.$Secondary-Color;
+            color: Var.$Tertiary-Color-Lighter;
+            padding: 0.5625rem 2.0625rem;
+            border: none;
+        }
+    }
+}

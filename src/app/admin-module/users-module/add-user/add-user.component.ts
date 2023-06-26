@@ -1,14 +1,12 @@
-import { Component, Input, OnInit} from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ValidationService } from 'src/app/Common/Services/validation.service';
-
 @Component({
-  selector: 'app-inventory-form',
-  templateUrl: './inventory-form.component.html',
-  styleUrls: ['./inventory-form.component.scss']
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.scss']
 })
-export class InventoryFormComponent implements OnInit {
+export class AddUserComponent implements OnInit {
   isEmpty: any = {
     Job_Number: true,
     Description: true,
@@ -37,7 +35,6 @@ export class InventoryFormComponent implements OnInit {
       Quantity: this.vs.validators.numbers
     });
   }
-
   ngOnInit() {
     for (let controlName in this.inventoryForm.controls) {
       this.inventoryForm.get(controlName)?.valueChanges.subscribe((value: any) => {

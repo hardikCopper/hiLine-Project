@@ -31,10 +31,14 @@ export class UsersComponent {
   }
   deleteRow() {
     this.modalService.btnPress = true;
-    this.modalService.onModelState('deleteModal')
+    this.modalService.onModelStates('deleteModal')
   }
   openEdit(path: number | undefined) {
     console.log('path: ', path);
     this.router.navigate([`${path}/edit`], { relativeTo: this.route });
+  }
+  openAdd() {
+    this.modalService.btnPress = true;
+    this.modalService.onModelStates('addUser')
   }
 }

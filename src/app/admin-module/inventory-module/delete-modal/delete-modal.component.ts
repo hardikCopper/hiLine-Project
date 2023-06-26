@@ -11,9 +11,9 @@ export class DeleteModalComponent {
   constructor(private modalService: ModalService) {
   }
   cancel() {
-    this.modalService.offModelState()
+    this.modalService.offModelStates()
   }
   delete() {
-    this.modalService.offModelState()
+    this.modalService.offModelStates()
   }
 }

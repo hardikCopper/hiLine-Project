@@ -2,4 +2,7 @@
     <ng-container *ngIf="modalStates.deleteModal">
         <app-delete-modal #child></app-delete-modal>
     </ng-container>
+    <ng-container *ngIf="modalStates['addUser']">
+        <app-add-user #child></app-add-user>
+    </ng-container>
 </section>
