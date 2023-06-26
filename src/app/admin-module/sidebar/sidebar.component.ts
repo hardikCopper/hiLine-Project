@@ -14,15 +14,11 @@ export class SidebarComponent {
   { activeState: false, path: 'area', blackUrl: '/assets/Icons/Black_Sidebar/Area.svg', whiteUrl: '/assets/Icons/White_Sidebar/Area.svg' },
   { activeState: false, blackUrl: '/assets/Icons/Black_Sidebar/Parts.svg', whiteUrl: '/assets/Icons/White_Sidebar/Parts.svg' }]
   constructor(private router: Router, private route: ActivatedRoute) {
+    console.log('Path ', this.router.url);
+    this.changeStyleOnRoute(this.router.url)
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.activeRoute.forEach((route) => {
-          let routePath = '';
-          if (route.path != '') routePath = `/${route.path}`;
-          if (event.url === `/admin${routePath}`) route.activeState = true;
-          else route.activeState = false
-        })
-        // Do whatever you need to do here
+        this.changeStyleOnRoute(event.url)
       }
     });
 
@@ -31,5 +27,12 @@ export class SidebarComponent {
   changeActiveRoute(path: string | undefined) {
     this.router.navigate([path], { relativeTo: this.route });
   }
-
+  changeStyleOnRoute(url: string) {
+    this.activeRoute.forEach((route) => {
+      let routePath = '';
+      if (route.path != '') routePath = `/${route.path}`;
+      if (url === `/admin${routePath}`) route.activeState = true;
+      else route.activeState = false
+    })
+  }
 }
