@@ -18,6 +18,7 @@ export class SidebarComponent {
     this.changeStyleOnRoute(this.router.url)
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
+        console.log("URL: ", event.url)
         this.changeStyleOnRoute(event.url)
       }
     });
@@ -27,12 +28,18 @@ export class SidebarComponent {
   changeActiveRoute(path: string | undefined) {
     this.router.navigate([path], { relativeTo: this.route });
   }
+  // Change Style of Sidebar Buttons based on URL
   changeStyleOnRoute(url: string) {
-    this.activeRoute.forEach((route) => {
-      let routePath = '';
-      if (route.path != '') routePath = `/${route.path}`;
-      if (url === `/admin${routePath}`) route.activeState = true;
-      else route.activeState = false
-    })
+    let checkURL = url.split('/')[2];
+    let falseCount = 0;
+    for (let count = 1; count < this.activeRoute.length - 1; count++) {
+      if (checkURL === this.activeRoute[count].path) this.activeRoute[count].activeState = true;
+      else {
+        this.activeRoute[count].activeState = false;
+        falseCount++;
+      }
+    }
+    if ((checkURL === undefined || falseCount === 3) && url.split('/')[1] === 'admin') this.activeRoute[0].activeState = true
+    else this.activeRoute[0].activeState = false
   }
 }

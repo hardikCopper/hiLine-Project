@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UsersComponent {
   data: userDataType[] = [];
+  groupCheckBoxState = false
   constructor(private fetchDataService: FetchDataService, private modalService: ModalService, private router: Router, private route: ActivatedRoute) { }
   ngOnInit(): void {
     this.fetchDataService.fetchUserData()
@@ -25,8 +26,9 @@ export class UsersComponent {
     return item.id;
   }
   toggleAllCheckbox() {
+    this.groupCheckBoxState = !this.groupCheckBoxState;
     this.data.forEach(item => {
-      item.checkboxState = !item.checkboxState
+      item.checkboxState = this.groupCheckBoxState;
     })
   }
   deleteRow() {
