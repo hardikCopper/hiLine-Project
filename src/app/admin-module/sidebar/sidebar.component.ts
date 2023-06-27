@@ -12,7 +12,7 @@ export class SidebarComponent {
   { activeState: false, path: 'users', blackUrl: '/assets/Icons/Black_Sidebar/Team.svg', whiteUrl: '/assets/Icons/White_Sidebar/Team.svg' },
   { activeState: false, path: 'price_and_parts', blackUrl: '/assets/Icons/Black_Sidebar/Price.svg', whiteUrl: '/assets/Icons/White_Sidebar/Price.svg' },
   { activeState: false, path: 'area', blackUrl: '/assets/Icons/Black_Sidebar/Area.svg', whiteUrl: '/assets/Icons/White_Sidebar/Area.svg' },
-  { activeState: false, blackUrl: '/assets/Icons/Black_Sidebar/Parts.svg', whiteUrl: '/assets/Icons/White_Sidebar/Parts.svg' }]
+  { activeState: false, path: 'settings', blackUrl: '/assets/Icons/Black_Sidebar/Parts.svg', whiteUrl: '/assets/Icons/White_Sidebar/Parts.svg' }]
   constructor(private router: Router, private route: ActivatedRoute) {
     console.log('Path ', this.router.url);
     this.changeStyleOnRoute(this.router.url)
@@ -32,14 +32,14 @@ export class SidebarComponent {
   changeStyleOnRoute(url: string) {
     let checkURL = url.split('/')[2];
     let falseCount = 0;
-    for (let count = 1; count < this.activeRoute.length - 1; count++) {
+    for (let count = 1; count < this.activeRoute.length; count++) {
       if (checkURL === this.activeRoute[count].path) this.activeRoute[count].activeState = true;
       else {
         this.activeRoute[count].activeState = false;
         falseCount++;
       }
     }
-    if ((checkURL === undefined || falseCount === 3) && url.split('/')[1] === 'admin') this.activeRoute[0].activeState = true
+    if ((checkURL === undefined || falseCount === this.activeRoute.length - 1) && url.split('/')[1] === 'admin') this.activeRoute[0].activeState = true
     else this.activeRoute[0].activeState = false
   }
 }

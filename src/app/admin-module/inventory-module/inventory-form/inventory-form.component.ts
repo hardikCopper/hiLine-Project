@@ -25,7 +25,7 @@ export class InventoryFormComponent {
     Part_Description: true,
     Quantity: true
   }
-  controlNames:string[]=[]
+  controlNames: string[] = []
   @Input() btn_name = ''
   inventoryForm: FormGroup
   constructor(private fb: FormBuilder, private vs: ValidationService) {
@@ -42,7 +42,7 @@ export class InventoryFormComponent {
     }
   }
 
-  validation(index:number){
+  validation(index: number) {
     if (this.inventoryForm.controls[this.controlNames[index]].value === '') this.isEmpty[this.controlNames[index]] = true;
     else this.isEmpty[this.controlNames[index]] = false
     if (this.inventoryForm.controls[this.controlNames[index]].invalid) this.isValid[this.controlNames[index]] = false

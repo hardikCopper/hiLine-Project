@@ -38,4 +38,7 @@ export class TableComponent implements OnInit {
     console.log('path: ', path);
     this.router.navigate([`${path}/edit`], { relativeTo: this.route });
   }
+  changeCheckBoxState(index: number) {
+    this.data[index].checkboxState = !this.data[index].checkboxState;
+  }
 }

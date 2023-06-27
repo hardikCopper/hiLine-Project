@@ -2,14 +2,16 @@
     <section class="inputGrid">
         <div class="inputBox">
             <label>Job Number*</label>
-            <input type="text" placeholder="Enter Number" formControlName="Job_Number" (focusout)="validation(0)" (input)="validation(0)">
+            <input type="text" placeholder="Enter Number" formControlName="Job_Number" (focusout)="validation(0)"
+                (input)="validation(0)">
             <p class="error" [ngStyle]="{'visibility': !isValid.Job_Number ? 'visible' : 'hidden'}">
                 {{!isEmpty.Job_Number
                 ? 'Invalid' : 'Field is Required'}}</p>
         </div>
         <div class="inputBox">
             <label>Job Description*</label>
-            <input type="text" placeholder="Enter text" formControlName="Description" (focusout)="validation(1)" (input)="validation(1)">
+            <input type="text" placeholder="Enter text" formControlName="Description" (focusout)="validation(1)"
+                (input)="validation(1)">
             <p class="error" [ngStyle]="{'visibility': !isValid.Description ? 'visible' : 'hidden'}"
                 (focusout)="validation(1)">
                 {{!isEmpty.Description ? 'Invalid' : 'Field is Required'}}</p>
@@ -25,24 +27,28 @@
         </div>
         <div class="inputBox">
             <label>Part Number</label>
-            <input type="text" placeholder="Enter number" formControlName="Part_Number" (focusout)="validation(3)" (input)="validation(3)">
+            <input type="text" placeholder="Enter number" formControlName="Part_Number" (focusout)="validation(3)"
+                (input)="validation(3)">
             <p class="error" [ngStyle]="{'visibility': !isValid.Part_Number ? 'visible' : 'hidden'}">
                 {{!isEmpty.Part_Number ? 'Invalid' : 'Field is Required'}}</p>
         </div>
         <div class="inputBox">
             <label>Part Description</label>
-            <input type="text" placeholder="Enter text" formControlName="Part_Description" (focusout)="validation(4)" (input)="validation(4)">
+            <input type="text" placeholder="Enter text" formControlName="Part_Description" (focusout)="validation(4)"
+                (input)="validation(4)">
             <p class="error" [ngStyle]="{'visibility': !isValid.Part_Description ? 'visible' : 'hidden'}">
                 {{!isEmpty.Part_Description ? 'Invalid' : 'Field is Required'}}</p>
         </div>
         <div class="inputBox">
             <label>Quantity</label>
-            <input type="number" placeholder="Enter number" formControlName="Quantity" (focusout)="validation(5)" (input)="validation(5)">
+            <input type="number" placeholder="Enter number" formControlName="Quantity" (focusout)="validation(5)"
+                (input)="validation(5)">
             <p class="error" [ngStyle]="{'visibility': !isValid.Quantity ? 'visible' : 'hidden'}">{{!isEmpty.Quantity ?
                 'Invalid' : 'Field is Required'}}</p>
         </div>
     </section>
     <div class="btn-block">
-        <button>{{btn_name|uppercase}}</button>
+        <button [disabled]="!inventoryForm.valid"
+            [ngStyle]="{'opacity':!inventoryForm.valid?'0.5':'1'}">{{btn_name|uppercase}}</button>
     </div>
 </form>

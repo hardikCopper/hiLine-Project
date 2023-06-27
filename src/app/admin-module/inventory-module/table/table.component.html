@@ -1,7 +1,14 @@
 <table class="data-table">
     <tr>
         <th class="bl0">
-            <div><input type="checkbox" (click)="toggleAllCheckbox()">Job#<img src=" assets/Icons/SortUp&Down.svg">
+            <div class="checkbox_parent">
+                <ng-container *ngIf="!groupCheckBoxState">
+                    <span class="custom_checkbox" (click)="toggleAllCheckbox()"></span>
+                </ng-container>
+                <ng-container *ngIf="groupCheckBoxState">
+                    <img src="/assets/Icons/Checkbox_Checked.svg" class="checkboxIcon" (click)="toggleAllCheckbox()">
+                </ng-container>
+                Job#<img src=" assets/Icons/SortUp&Down.svg" class="sortIcon">
             </div>
         </th>
         <th>
@@ -20,10 +27,19 @@
             <div>Actions</div>
         </th>
     </tr>
-    <tr *ngFor="let d of data; even as isEven; odd as isOdd;trackBy: trackByIndex;"
+    <tr *ngFor="let d of data; even as isEven; odd as isOdd; let i = index;"
         [ngStyle]="{ 'background-color': isEven ? '#e5eef5':'#ffffff'}">
         <td class="bl0">
-            <div><input type="checkbox" [(ngModel)]='d.checkboxState'><span class="id">{{d.id}}</span></div>
+            <div class="checkbox_parent">
+                <ng-container *ngIf="!d.checkboxState">
+                    <span class="custom_checkbox" (click)="changeCheckBoxState(i)">
+                    </span>
+                </ng-container>
+                <ng-container *ngIf="d.checkboxState">
+                    <img src="/assets/Icons/Checkbox_Checked.svg" class="checkboxIcon" (click)="changeCheckBoxState(i)">
+                </ng-container>
+                <span class="id">{{d.id}}</span>
+            </div>
         </td>
         <td>
             <div>{{d.description}}</div>

@@ -10,6 +10,26 @@
         box-sizing: border-box;
     }
 
+    .checkbox_parent {
+
+        .checkboxIcon {
+            margin-right: 1rem;
+        }
+
+        .custom_checkbox {
+            border: 2px solid Var.$Secondary-Color;
+            border-radius: 4px;
+            width: 24px;
+            height: 24px;
+            margin-right: 1rem;
+            box-sizing: border-box;
+        }
+
+        .custom_checkbox:hover {
+            cursor: pointer;
+        }
+    }
+
     th {
         border: 1px solid Var.$Gray-4;
         border-right-color: Var.$Gray-3;
@@ -32,7 +52,7 @@
                 margin-right: 1rem;
             }
 
-            img {
+            .sortIcon {
                 margin-left: 0.5rem;
                 width: 7px;
             }
@@ -72,25 +92,16 @@
             }
         }
 
-        input[type="checkbox"] {
-            margin: 0;
-            border: 2px solid Var.$Secondary-Color;
-            border-radius: 4px;
-            width: 1.5rem;
-            height: 1.5rem;
+        .bl0 {
+            border-left: 0;
+        }
+
+        .br0 {
+            border-right: 0;
+        }
+
+        .mr1 {
             margin-right: 1rem;
         }
-    }
-
-    .bl0 {
-        border-left: 0;
-    }
-
-    .br0 {
-        border-right: 0;
-    }
-
-    .mr1 {
-        margin-right: 1rem;
     }
 }
