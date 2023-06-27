@@ -11,7 +11,9 @@ export class ValidationService {
     password: ['', [Validators.required, Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$')]],
     state: [false],
     numbers: ['', [Validators.required, Validators.pattern('[0-9]+')]],
-    text: ['', [Validators.required]]
+    numbersNR: ['', [Validators.pattern('[0-9]+')]],
+    text: ['', [Validators.required]],
+    textNR: ['']
   }
 
   constructor() { }

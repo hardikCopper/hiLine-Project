@@ -1,21 +1,20 @@
 <header class="navBar-Section">
     <section class="leftSection">
         <div class="menuHandler">
-            <img src="/assets/Icons/menuHandler.svg" alt="" (click)="changeSideBarLife()">
+            <img src="/assets/Icons/menuHandler.svg" alt="" (click)="changeSideBarLife()" />
         </div>
         <div class="logo-Block">
-            <img src="/assets/Icons/Logo.svg" alt="">
+            <img src="/assets/Icons/Logo.svg" alt="" />
         </div>
     </section>
     <section class="rightSection">
         <div class="profile-block"></div>
         <h6 class="name">Name</h6>
         <div class="dropdown-block">
-            <img src="/assets/Icons/Dropdown.svg" alt="" (click)="changeMenu()">
+            <img src="/assets/Icons/Dropdown.svg" alt="" (click)="changeMenu()" />
         </div>
         <ng-container *ngIf="menuState">
             <app-navbar-right-menu></app-navbar-right-menu>
         </ng-container>
     </section>
-
 </header>
