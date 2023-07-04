@@ -1,22 +1,23 @@
 <section class="add-user-section">
+    <h3>Add User</h3>
     <form [formGroup]="inventoryForm" class="inventory-form">
         <section class="inputGrid">
             <div class="inputBox">
-                <label>Job Number*</label>
-                <input type="number" placeholder="Enter Number" formControlName="Job_Number">
-                <p class="error" [ngStyle]="{'visibility': !isValid.Job_Number ? 'visible' : 'hidden'}">
-                    {{!isEmpty.Job_Number
+                <label>Employee Id*</label>
+                <input type="number" placeholder="Enter Number" formControlName="Employee_Id">
+                <p class="error" [ngStyle]="{'visibility': !isValid.Employee_Id ? 'visible' : 'hidden'}">
+                    {{!isEmpty.Employee_Id
                     ? 'Invalid' : 'Field is Required'}}</p>
             </div>
             <div class="inputBox">
-                <label>Job Description*</label>
-                <input type="text" placeholder="Enter text" formControlName="Description">
-                <p class="error" [ngStyle]="{'visibility': !isValid.Description ? 'visible' : 'hidden'}">
-                    {{!isEmpty.Description ? 'Invalid' : 'Field is Required'}}</p>
+                <label>Employee Name*</label>
+                <input type="text" placeholder="Enter text" formControlName="Employee_Name">
+                <p class="error" [ngStyle]="{'visibility': !isValid.Employee_Name ? 'visible' : 'hidden'}">
+                    {{!isEmpty.Employee_Name ? 'Invalid' : 'Field is Required'}}</p>
             </div>
             <div class="inputBox">
-                <label>Area</label>
-                <select id="cars" name="cars" formControlName="Area">
+                <label>Select Role*</label>
+                <select id="cars" name="cars" formControlName="Select_Role">
                     <option value="volvo">Volvo</option>
                     <option value="saab">Saab</option>
                     <option value="fiat">Fiat</option>
@@ -24,27 +25,20 @@
                 </select>
             </div>
             <div class="inputBox">
-                <label>Part Number</label>
-                <input type="text" placeholder="Enter number" formControlName="Part_Number">
-                <p class="error" [ngStyle]="{'visibility': !isValid.Part_Number ? 'visible' : 'hidden'}">
-                    {{!isEmpty.Part_Number ? 'Invalid' : 'Field is Required'}}</p>
+                <label>Password*</label>
+                <input type="password" placeholder="Enter Password" formControlName="Password">
+                <p class="error" [ngStyle]="{'visibility': !isValid.Password ? 'visible' : 'hidden'}">
+                    {{!isEmpty.Password ? 'Invalid' : 'Field is Required'}}</p>
             </div>
             <div class="inputBox">
-                <label>Part Description</label>
-                <input type="text" placeholder="Enter text" formControlName="Part_Description">
-                <p class="error" [ngStyle]="{'visibility': !isValid.Part_Description ? 'visible' : 'hidden'}">
-                    {{!isEmpty.Part_Description ? 'Invalid' : 'Field is Required'}}</p>
-            </div>
-            <div class="inputBox">
-                <label>Quantity</label>
-                <input type="number" placeholder="Enter number" formControlName="Quantity">
-                <p class="error" [ngStyle]="{'visibility': !isValid.Quantity ? 'visible' : 'hidden'}">
-                    {{!isEmpty.Quantity ?
-                    'Invalid' : 'Field is Required'}}</p>
+                <label>Email*</label>
+                <input type="email" placeholder="Enter Email" formControlName="Email">
+                <p class="error" [ngStyle]="{'visibility': !isValid.Email ? 'visible' : 'hidden'}">
+                    {{!isEmpty.Email ? 'Invalid' : 'Field is Required'}}</p>
             </div>
         </section>
         <div class="btn-block">
-            <button>{{btn_name|uppercase}}</button>
+            <button>ADD</button>
         </div>
     </form>
 </section>

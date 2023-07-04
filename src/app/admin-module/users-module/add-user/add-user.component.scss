@@ -1,56 +1,75 @@
 @use 'src/assets/scss/Abstract/mixinsTypo' as Mix;
 @use 'src/assets/scss/Abstract/variables' as Var;
 
-.inventory-form {
-    margin-top: 1.625rem;
-    height: 16.875rem;
-    background: Var.$Tertiary-Color-Light;
-    box-shadow: 0px 4px 4px rgba(192, 192, 192, 0.5);
-    padding: 1rem;
-    box-sizing: border-box;
+.add-user-section {
+    background-color: Var.$Tertiary-Color-Lighter;
+    padding: 2rem;
+    border: 1px solid Var.$Gray-3;
+    background: Var.$Tertiary-Color-Lighter;
 
-    .inputGrid {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        row-gap: 2.25rem;
-        column-gap: 1rem;
+    /* card-shadow */
+    box-shadow: 0px 4px 4px 0px rgba(192, 192, 192, 0.50);
 
-        .inputBox {
-            display: flex;
-            flex-direction: column;
-
-            input {
-                height: 2.5rem;
-            }
-
-            select {
-                height: 2.8rem;
-            }
-
-            input,
-            select {
-                padding-left: 0.5rem;
-            }
-
-            label {
-                @include Mix.Label;
-                margin-bottom: 0.25rem;
-            }
-        }
+    h3 {
+        @include Mix.H3;
+        margin: 0;
+        margin-bottom: 0.81rem;
     }
 
-    .btn-block {
-        display: flex;
-        justify-content: flex-end;
-        align-items: start;
+    .inventory-form {
+        width: 55.375rem;
+        background: Var.$Tertiary-Color-Light;
+        box-shadow: 0px 4px 4px rgba(192, 192, 192, 0.5);
+        padding: 1rem;
+        box-sizing: border-box;
 
-        button {
-            @include Mix.BTN-Bold;
-            border-radius: 8px;
-            background-color: Var.$Secondary-Color;
-            color: Var.$Tertiary-Color-Lighter;
-            padding: 0.5625rem 2.0625rem;
-            border: none;
+        .inputGrid {
+            display: grid;
+            grid-template-columns: auto auto;
+            row-gap: 1rem;
+            column-gap: 1rem;
+
+            .inputBox {
+                display: flex;
+                flex-direction: column;
+
+                input {
+                    height: 2.5rem;
+                }
+
+                select {
+                    height: 2.8rem;
+                }
+
+                input,
+                select {
+                    padding-left: 0.5rem;
+                }
+
+                label {
+                    @include Mix.Label;
+                    margin-bottom: 0.25rem;
+                }
+            }
+
+            .inputBox:last-of-type {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .btn-block {
+            display: flex;
+            justify-content: flex-end;
+            align-items: start;
+
+            button {
+                @include Mix.BTN-Bold;
+                border-radius: 8px;
+                background-color: Var.$Secondary-Color;
+                color: Var.$Tertiary-Color-Lighter;
+                padding: 0.5625rem 2.0625rem;
+                border: none;
+            }
         }
     }
 }

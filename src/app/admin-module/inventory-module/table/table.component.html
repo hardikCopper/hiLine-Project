@@ -2,12 +2,10 @@
     <tr>
         <th class="bl0">
             <div class="checkbox_parent">
-                <ng-container *ngIf="!groupCheckBoxState">
-                    <span class="custom_checkbox" (click)="toggleAllCheckbox()"></span>
-                </ng-container>
-                <ng-container *ngIf="groupCheckBoxState">
-                    <img src="/assets/Icons/Checkbox_Checked.svg" class="checkboxIcon" (click)="toggleAllCheckbox()">
-                </ng-container>
+                <span class="custom_checkbox" (click)="toggleAllCheckbox()"
+                    [ngStyle]="{'visibility': !groupCheckBoxState ? 'visible' : 'hidden'}"></span>
+                <img src="/assets/Icons/Checkbox_Checked.svg" class="checkboxIcon" (click)="toggleAllCheckbox()"
+                    [ngStyle]="{'visibility': groupCheckBoxState ? 'visible' : 'hidden'}">
                 Job#<img src=" assets/Icons/SortUp&Down.svg" class="sortIcon">
             </div>
         </th>
@@ -15,13 +13,13 @@
             <div>Job Description</div>
         </th>
         <th>
-            <div>Date<img src="assets/Icons/SortUp&Down.svg"></div>
+            <div>Date<img src=" assets/Icons/SortUp&Down.svg" class="sortIcon"></div>
         </th>
         <th class="quantity">
-            <div>Total Quantity<img src="assets/Icons/SortUp&Down.svg"></div>
+            <div>Total Quantity<img src=" assets/Icons/SortUp&Down.svg" class="sortIcon"></div>
         </th>
         <th>
-            <div>Invoiced<img src="assets/Icons/SortUp&Down.svg"></div>
+            <div>Invoiced<img src=" assets/Icons/SortUp&Down.svg" class="sortIcon"></div>
         </th>
         <th class="br0">
             <div>Actions</div>
@@ -31,13 +29,11 @@
         [ngStyle]="{ 'background-color': isEven ? '#e5eef5':'#ffffff'}">
         <td class="bl0">
             <div class="checkbox_parent">
-                <ng-container *ngIf="!d.checkboxState">
-                    <span class="custom_checkbox" (click)="changeCheckBoxState(i)">
-                    </span>
-                </ng-container>
-                <ng-container *ngIf="d.checkboxState">
-                    <img src="/assets/Icons/Checkbox_Checked.svg" class="checkboxIcon" (click)="changeCheckBoxState(i)">
-                </ng-container>
+                <span class="custom_checkbox" (click)="changeCheckBoxState(i)"
+                    [ngStyle]="{'visibility': !d.checkboxState ? 'visible' : 'hidden'}">
+                </span>
+                <img src="/assets/Icons/Checkbox_Checked.svg" class="checkboxIcon" (click)="changeCheckBoxState(i)"
+                    [ngStyle]="{'visibility': d.checkboxState ? 'visible' : 'hidden'}">
                 <span class="id">{{d.id}}</span>
             </div>
         </td>

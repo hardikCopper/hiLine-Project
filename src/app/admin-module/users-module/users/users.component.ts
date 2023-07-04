@@ -43,4 +43,7 @@ export class UsersComponent {
     this.modalService.btnPress = true;
     this.modalService.onModelStates('addUser')
   }
+  changeCheckBoxState(index: number) {
+    this.data[index].checkboxState = !this.data[index].checkboxState;
+  }
 }
