@@ -1,8 +1,11 @@
 <section class="admin-modal">
-    <ng-container *ngIf="modalStates.deleteModal">
+    <ng-container *ngIf="modalStates.deleteInventory">
         <app-delete-modal #child></app-delete-modal>
     </ng-container>
-    <ng-container *ngIf="modalStates['addUser']">
+    <ng-container *ngIf="modalStates.addUser">
         <app-add-user #child></app-add-user>
+    </ng-container>
+    <ng-container *ngIf="modalStates.editUser">
+        <app-edit-user #child></app-edit-user>
     </ng-container>
 </section>

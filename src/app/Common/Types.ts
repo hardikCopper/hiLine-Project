@@ -27,7 +27,9 @@ export type userDataType = {
 
 export type modalStatesType = {
     [key: string]: boolean;
-    deleteModal: boolean
+    deleteInventory: boolean,
+    addUser: false,
+    editUser: false,
 }
 export type isEmptyType = {
     [controlName: string]: boolean;

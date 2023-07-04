@@ -6,11 +6,13 @@ import { UsersComponent } from './users/users.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModuleModule } from 'src/app/shared-module/shared-module.module';
 import { AddUserComponent } from './add-user/add-user.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
     UsersComponent,
-    AddUserComponent
+    AddUserComponent,
+    EditUserComponent
   ],
   imports: [
     CommonModule,
@@ -19,6 +21,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     ReactiveFormsModule,
     SharedModuleModule
   ],
-  exports:[AddUserComponent]
+  exports: [AddUserComponent,
+    EditUserComponent]
 })
 export class UsersModuleModule { }

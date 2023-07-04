@@ -10,8 +10,9 @@ export class ModalService {
   private modelStateObservable = this.modelState.asObservable();
   btnPress = false
   modelStates: modalStatesType = {
-    deleteModal: false,
-    addUser: false
+    deleteInventory: false,
+    addUser: false,
+    editUser: false
   }
   constructor() { }
   getModalState(): Observable<boolean> {
