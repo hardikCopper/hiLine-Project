@@ -18,7 +18,7 @@
         </div>
         <div class="inputBox">
             <label>Area</label>
-            <select id="cars" name="cars" formControlName="Area">
+            <select title="Area" name="area" formControlName="Area">
                 <option value="volvo">Volvo</option>
                 <option value="saab">Saab</option>
                 <option value="fiat">Fiat</option>
@@ -48,7 +48,7 @@
         </div>
     </section>
     <div class="btn-block">
-        <button [disabled]="!inventoryForm.valid"
+        <button type="button" [disabled]="!inventoryForm.valid"
             [ngStyle]="{'opacity':!inventoryForm.valid?'0.5':'1'}">{{btn_name|uppercase}}</button>
     </div>
 </form>

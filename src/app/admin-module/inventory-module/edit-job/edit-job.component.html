@@ -3,13 +3,14 @@
         <img src="assets/Icons/Right-left_Arrow.svg" alt="" (click)="goBack()">
         <h5>Edit Job# - </h5>
     </div>
-    <form class="editJob">
+    <form class="editJob" (submit)="changeJobDes($event)">
         <div>
-            <label>Job Description</label>
-            <input type="text">
+            <label for="editJobDescriptionInput">Job Description</label>
+            <input type="text" id="editJobDescriptionInput" [(ngModel)]="inputData"
+                [ngModelOptions]="{standalone: true}">
         </div>
         <div class="bottom-block">
-            <button>Update</button>
+            <button type="submit">Update</button>
         </div>
     </form>
 </section>

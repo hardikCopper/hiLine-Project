@@ -34,9 +34,9 @@ export class TableComponent implements OnInit {
     this.modalService.btnPress = true;
     this.modalService.onModelStates('deleteInventory')
   }
-  openEdit(path: number | undefined) {
-    console.log('path: ', path);
-    this.router.navigate([`${path}/edit`], { relativeTo: this.route });
+  openEdit(data: jobDataType) {
+    this.fetchDataService.setDescription = { ...data }
+    this.router.navigate([`${data.id}/edit`], { relativeTo: this.route });
   }
   changeCheckBoxState(index: number) {
     this.data[index].checkboxState = !this.data[index].checkboxState;
