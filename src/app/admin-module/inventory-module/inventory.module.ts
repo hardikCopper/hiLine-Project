@@ -38,6 +38,7 @@ import { SharedModuleModule } from 'src/app/shared-module/shared-module.module';
     SharedModuleModule
   ],
   exports: [DeleteModalComponent,
-    EditJobComponent]
+    EditJobComponent],
+  providers: [TabsComponent]
 })
 export class InventoryModule { }

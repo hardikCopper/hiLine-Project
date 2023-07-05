@@ -6,7 +6,7 @@ import { activeTabType } from 'src/app/Common/Types';
   styleUrls: ['./tabs.component.scss']
 })
 export class TabsComponent {
-  @Input() activeTab: activeTabType[]=[];
+  @Input() activeTab: activeTabType[] = [];
   changeTab(activeIndex: number) {
     this.activeTab.forEach((tab: activeTabType, index: number) => {
       if (index === activeIndex) tab.activeState = true;

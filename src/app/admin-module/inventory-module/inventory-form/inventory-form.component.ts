@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { ValidationService } from 'src/app/Common/Services/validation.service';
+import { jobDataType } from 'src/app/Common/Types';
 
 @Component({
   selector: 'app-inventory-form',
@@ -28,6 +29,8 @@ export class InventoryFormComponent {
   controlNames: string[] = []
   @Input() btn_name = ''
   inventoryForm: FormGroup
+  @Output() formSubmitted = new EventEmitter<jobDataType>();
+  sendData: jobDataType = { id: undefined, description: undefined, checkboxState: undefined, invoiced: undefined, date: undefined, quantity: undefined }
   constructor(private fb: FormBuilder, private vs: ValidationService) {
     this.inventoryForm = this.fb.group({
       Job_Number: this.vs.validators.numbers,
@@ -40,6 +43,19 @@ export class InventoryFormComponent {
     for (let controlName in this.inventoryForm.controls) {
       this.controlNames.push(controlName)
     }
+  }
+  submitForm(e: Event) {
+    e.preventDefault();
+    console.log("Clicked")
+    let date = new Date();
+    this.sendData.quantity = this.inventoryForm.value.Quantity;
+    this.sendData.id = this.inventoryForm.value.Job_Number;
+    this.sendData.description = this.inventoryForm.value.Description;
+    this.sendData.checkboxState = false
+    this.sendData.invoiced = 'Open'
+    this.sendData.date = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    console.log('this.sendData: ', this.sendData);
+    this.formSubmitted.emit(this.sendData);
   }
 
   validation(index: number) {

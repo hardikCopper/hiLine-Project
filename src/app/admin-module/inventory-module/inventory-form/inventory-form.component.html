@@ -1,4 +1,4 @@
-<form [formGroup]="inventoryForm" class="inventory-form">
+<form [formGroup]="inventoryForm" class="inventory-form" (submit)="submitForm($event)">
     <section class="inputGrid">
         <div class="inputBox">
             <label>Job Number*</label>
@@ -48,7 +48,7 @@
         </div>
     </section>
     <div class="btn-block">
-        <button type="button" [disabled]="!inventoryForm.valid"
+        <button type="submit" [disabled]="!inventoryForm.valid"
             [ngStyle]="{'opacity':!inventoryForm.valid?'0.5':'1'}">{{btn_name|uppercase}}</button>
     </div>
 </form>
