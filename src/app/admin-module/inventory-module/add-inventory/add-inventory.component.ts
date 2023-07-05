@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { jobDataType } from 'src/app/Common/Types';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -10,12 +10,13 @@ import { TabsComponent } from '../tabs/tabs.component';
 })
 export class AddInventoryComponent {
   btn_name = 'Add'
+  @Output() tabChanging = new EventEmitter<number>();
   constructor(private http: HttpClient, private router: Router, private tabs: TabsComponent) { }
   sendData(dataToSubmit: jobDataType) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
     return this.http.post<jobDataType>('http://localhost:4500/job', dataToSubmit, { headers }).subscribe(data => {
       console.log(data)
-      this.tabs.changeTab(0)
+      this.tabChanging.emit(0);
     });
   }
 }

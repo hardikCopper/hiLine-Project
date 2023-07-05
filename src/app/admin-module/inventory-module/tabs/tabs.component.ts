@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { activeTabType } from 'src/app/Common/Types';
 @Component({
   selector: 'app-tabs',
@@ -7,11 +7,9 @@ import { activeTabType } from 'src/app/Common/Types';
 })
 export class TabsComponent {
   @Input() activeTab: activeTabType[] = [];
+  @Output() tabChanging = new EventEmitter<number>();
   changeTab(activeIndex: number) {
-    this.activeTab.forEach((tab: activeTabType, index: number) => {
-      if (index === activeIndex) tab.activeState = true;
-      else tab.activeState = false;
-    })
+    this.tabChanging.emit(activeIndex);
   }
 }
 
